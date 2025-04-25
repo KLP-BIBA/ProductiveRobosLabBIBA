@@ -4,6 +4,11 @@ FROM intel4coro/base-notebook:20.04-noetic-vnc
 # Path to the default ROS workspace
 ENV ROS_WS=${HOME}/workspace/ros
 
+
+USER root
+RUN apt update && apt install -y \
+     ros-${ROS_DISTRO}-ur-description \
+
 #============= Install extra software packages =============#
 # Examples:
 # RUN apt update && apt install -y curl
