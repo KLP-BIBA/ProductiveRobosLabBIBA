@@ -6,7 +6,7 @@ roscore &
 roslaunch --wait rvizweb rvizweb.launch &
 
 # Add other startup programs here
-install -y ros-kinetic-pr2-gazebo
+
 
 # The following line will allow the binderhub start Jupyterlab, should be at the end of the entrypoint.
 exec "$@"
