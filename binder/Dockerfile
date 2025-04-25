@@ -7,8 +7,9 @@ ENV ROS_WS=${HOME}/workspace/ros
 # Test
 USER root
 RUN apt update && apt install -y \
-     ros-${ROS_DISTRO}-ur-description \
-     ros-${ROS_DISTRO}-kinetic-pr2-gazebo 
+           ros-kinetic-pr2-gazebo
+
+
 
 #============= Install extra software packages =============#
 # Examples:
