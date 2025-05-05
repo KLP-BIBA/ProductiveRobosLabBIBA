@@ -5,9 +5,9 @@ FROM intel4coro/base-notebook:20.04-noetic-vnc
 ENV ROS_WS=${HOME}/workspace/ros
 
 # Test
-USER root
-RUN apt update && apt install -y \
-           ros-kinetic-pr2-gazebo
+#USER root
+#RUN apt update && apt install -y \
+#           ros-kinetic-pr2-gazebo
 
 
 
