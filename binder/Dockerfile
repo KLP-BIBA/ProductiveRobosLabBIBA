@@ -2,7 +2,7 @@
 FROM intel4coro/base-notebook:20.04-noetic-vnc
 
 # Path to the default ROS workspace
-ENV ROS_WS=/home/${NB_USER}/workspace/ros
+ENV ROS_WS=/home/workspace/ros
 
 # Test von KLP jetzt auskommentiert
 USER root
