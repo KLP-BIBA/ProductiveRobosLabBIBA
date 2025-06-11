@@ -1,0 +1,56 @@
+- git:
+    local-name: giskardpy
+    uri: https://github.com/SemRoCo/giskardpy.git
+    version: kevin
+- git: 
+    local-name: giskard_msgs
+    uri: https://github.com/SemRoCo/giskard_msgs.git
+    version: devel
+- git:
+    local-name: qpoases
+    uri: https://github.com/SemRoCo/qpOASES.git
+    version: v3.2.1
+- git:
+    local-name: orocos_kinematics_dynamics
+    uri: https://github.com/orocos/orocos_kinematics_dynamics.git
+    version: v1.5.1
+- git:
+    local-name: ros_controllers
+    uri: https://github.com/ros-controls/ros_controllers.git
+    version: noetic-devel
+- git:
+    local-name: iai_pr2
+    uri: https://github.com/code-iai/iai_pr2.git
+    version:  mujoco_sim_setup
+- git:
+    local-name: stretch_ros
+    uri: https://github.com/hello-robot/stretch_ros.git
+    version:  noetic
+- git:
+    local-name: iai_tracy
+    uri: https://github.com/code-iai/iai_tracy.git
+    version:  main
+- git:
+    local-name: robotiq_2finger_grippers
+    uri:  https://github.com/Danfoa/robotiq_2finger_grippers.git
+    version:  master
+- git: 
+    local-name: iai_naive_kinematics_sim
+    uri: https://github.com/code-iai/iai_naive_kinematics_sim.git
+    version: master
+- git: 
+    local-name: omni_pose_follower
+    uri: https://github.com/code-iai/omni_pose_follower.git
+    version: master
+- git:
+    local-name: iai_robots
+    uri: https://github.com/code-iai/iai_robots.git
+    version: master
+- git:
+    local-name: iai_robots_peripherals
+    uri: https://github.com/code-iai/iai_robot_peripherals.git
+    version: main
+
+
+
+
