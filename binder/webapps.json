@@ -1,0 +1,12 @@
+[
+  {
+    "name": "rvizweb",
+    "title": "Rvizweb",
+    "url": "proxy/8001/rvizweb/webapps/rvizweb/build/www/index.html"
+  },
+  {
+    "name": "desktop",
+    "title": "VNC Desktop (Embedded)",
+    "url": "desktop"
+  }
+]

@@ -1,11 +1,7 @@
 - git:
-    local-name: giskardpy
-    uri: https://github.com/SemRoCo/giskardpy.git
-    version: kevin
-- git: 
     local-name: giskard_msgs
     uri: https://github.com/SemRoCo/giskard_msgs.git
-    version: devel
+    version: ros1-noetic-main
 - git:
     local-name: qpoases
     uri: https://github.com/SemRoCo/qpOASES.git
@@ -50,7 +46,3 @@
     local-name: iai_robots_peripherals
     uri: https://github.com/code-iai/iai_robot_peripherals.git
     version: main
-
-
-
-
