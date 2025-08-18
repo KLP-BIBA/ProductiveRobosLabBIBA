@@ -5,11 +5,11 @@ roscore &
 
 sleep 5
 
-roslaunch rvizweb rvizweb.launch &
+roslaunch rvizweb rvizweb.launch config_file:=/home/jovyan/work/rviz/rviz-config.json &
 
 # Prepare temporary launch file with arg definition
-MY_LAUNCH=$HOME/work/launch/my-first.launch
-TMP_LAUNCH=/tmp/my-first.launch
+MY_LAUNCH=$HOME/work/launch/robots.launch
+TMP_LAUNCH=/tmp/robots.launch
 
 cp $MY_LAUNCH $TMP_LAUNCH
 
@@ -19,7 +19,7 @@ if ! grep -q '<arg name="urdf_file"' $TMP_LAUNCH; then
 fi
 
 # Launch with argument pointing to your urdf file path
-roslaunch $TMP_LAUNCH urdf_file:=$HOME/work/urdf/my-first.urdf &
+# roslaunch $TMP_LAUNCH urdf_file:=$HOME/work/urdf/my-first.urdf &
 
 # rest of your startup
 

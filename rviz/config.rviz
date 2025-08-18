@@ -1,0 +1,43 @@
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color:
+        B: 0.5000075
+        G: 0.5000075
+        R: 0.5000075
+      Enabled: true
+      Name: Grid
+      Normal Cell Count: 0
+      Plane: XY
+      Reference Frame: ''
+      Value: true
+    - Class: rviz/RobotModel
+      Name: RobotModel
+      Enabled: true
+      Robot Description: robot_description
+      TF Prefix: ''
+      Visual Enabled: true
+      Alpha: 1
+      Robot State Topic: ''
+      Update Rate: 30
+  Enabled: true
+  Global Options:
+    Fixed Frame: base_link
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: false
+      Name: Interact
+    - Class: rviz/MoveCamera
+      Inverse Mouse Zoom: false
+      Name: Move Camera
+    - Class: rviz/Select
+      Name: Select
+    - Class: rviz/FocusCamera
+      Name: Focus Camera
+    - Class: rviz/Measure
+      Name: Measure
+  Value: true
