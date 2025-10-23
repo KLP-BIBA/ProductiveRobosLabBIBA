@@ -57,5 +57,8 @@ RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin build"
 # The entrypoint of the docker image
 COPY --chown=${NB_USER}:users binder/webapps.json ${ROS_WS}/src/rvizweb/webapps/app.json
 COPY --chown=${NB_USER}:users binder/entrypoint.sh /entrypoint.sh
+
+WORKDIR ${HOME}
+
 ENTRYPOINT ["/entrypoint.sh"]
 
