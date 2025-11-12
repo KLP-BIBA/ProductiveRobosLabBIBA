@@ -23,5 +23,7 @@ fi
 
 # rest of your startup
 
+python3 -m http.server 12345 --directory $HOME/work/meshes &
+
 exec "$@"
 
