@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <unit name="meter" meter="1"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="image0" name="image0">
+      <init_from>../12345/cube_diffuse.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="material0-effect">
+      <profile_COMMON>
+        <newparam sid="surface0">
+          <surface type="2D">
+            <init_from>image0</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="sampler0">
+          <sampler2D>
+            <source>surface0</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <diffuse>
+              <texture texture="sampler0" texcoord="CHANNEL0"/>
+            </diffuse>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="material0" name="material0">
+      <instance_effect url="#material0-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="CubeGeometry" name="CubeGeometry">
+      <mesh>
+        <source id="cube-positions">
+          <float_array id="cube-positions-array" count="24"> 
+            -0.5 -0.5 0.5  0.5 -0.5 0.5  0.5 0.5 0.5  -0.5 0.5 0.5  
+            -0.5 -0.5 -0.5  -0.5 0.5 -0.5  0.5 0.5 -0.5  0.5 -0.5 -0.5  
+            -0.5 0.5 -0.5  -0.5 0.5 0.5  0.5 0.5 0.5  0.5 0.5 -0.5  
+            -0.5 -0.5 -0.5  0.5 -0.5 -0.5  0.5 -0.5 0.5   -0.5 -0.5 0.5  
+            0.5 -0.5 -0.5  0.5 0.5 -0.5  0.5 0.5 0.5  0.5 -0.5 0.5  
+            -0.5 -0.5 -0.5  -0.5 -0.5 0.5  -0.5 0.5 0.5  -0.5 0.5 -0.5 
+          </float_array>
+          <technique_common>
+            <accessor source="#cube-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="cube-map">
+          <float_array id="cube-map-array" count="16">
+            0 0 1 0 1 1 0 1  0 0 1 0 1 1 0 1
+          </float_array>
+          <technique_common>
+            <accessor source="#cube-map-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="cube-vertices">
+          <input semantic="POSITION" source="#cube-positions"/>
+        </vertices>
+        <triangles material="material0" count="12">
+          <input semantic="VERTEX" source="#cube-vertices" offset="0"/>
+          <input semantic="TEXCOORD" source="#cube-map" offset="1" set="0"/>
+          <p>
+            0 0 1 1 2 2
+            2 2 3 3 0 0
+            4 0 5 1 6 2
+            6 2 7 3 4 0
+            8 0 9 1 10 2
+            10 2 11 3 8 0
+            12 0 13 1 14 2
+            14 2 15 3 12 0
+            16 0 17 1 18 2
+            18 2 19 3 16 0
+            20 0 21 1 22 2
+            22 2 23 3 20 0
+          </p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="CubeNode" name="CubeNode" type="NODE">
+        <instance_geometry url="#CubeGeometry">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="material0" target="#material0"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
