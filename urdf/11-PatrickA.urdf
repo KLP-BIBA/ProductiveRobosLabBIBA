@@ -17,7 +17,7 @@
     <visual>
      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>  
-            <mesh filename="../12345/base.stl"/>
+            <mesh filename="../12345/GoldbarrenPart1.stl"/>
       </geometry> 
     </visual>
   </link>
