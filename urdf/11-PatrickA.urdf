@@ -15,9 +15,9 @@
 
   <link name="right_leg">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh scale="0.03" filename="package://GoldbarrenGroup_description/meshes/GoldbarrenPart1.stl" />
+      <origin rpy="-3.1415 0 0" xyz="0.09137 0.00495 0"/>
+      <geometry>  
+            <mesh filename="../12345/GoldbarrenPart1.stl"/>
       </geometry> 
     </visual>
   </link>
