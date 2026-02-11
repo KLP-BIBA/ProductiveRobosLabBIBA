@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
-<robot name="origins">
+<!--Exported at 11.02.2026 15:20:35  -->
+<!--by BIBA-->
+<robot name="GoldbarrenGroup">
+<material name="Metall - 1600F (heiß)">
+    <color rgba="1 0.561 0.184 1" />
+  </material>
   <link name="base_link">
     <visual>
       <geometry>
