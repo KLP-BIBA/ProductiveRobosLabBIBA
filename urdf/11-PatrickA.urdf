@@ -12,12 +12,12 @@
       </geometry>
     </visual>
   </link>
-
+ 
   <link name="right_leg">
     <visual>
-      <origin rpy="-3.1415 0 0" xyz="0.09137 0.00495 0"/>
+     <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>  
-            <mesh filename="../12345/l_finger_tip.dae"/>
+            <mesh filename="../12345/base.stl"/>
       </geometry> 
     </visual>
   </link>
