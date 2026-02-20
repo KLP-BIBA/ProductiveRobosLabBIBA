@@ -15,19 +15,34 @@
  
  <link name="GoldbarrenPart1:1">
     <visual>
-     <origin xyz="100 0 0" rpy="0 0 0" />
+     <origin xyz="50 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh scale="0.5" filename="../12345/GoldbarrenPart1.stl"/>
+            <mesh filename="../12345/GoldbarrenPart1.stl"/>
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
     </visual>
   </link>
- 
+
+ <link name="GoldbarrenPart1:2">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/GoldbarrenPart1.stl"/>
+      </geometry> 
+         <material name="Metall - 1600F (heiß)" />
+    </visual>
+  </link>
+
   <joint name="base_to_right_leg" type="fixed">
     <parent link="base_link"/>
     <child link="GoldbarrenPart1:1"/>
     <origin xyz="0 -0.22 0.25"/>
   </joint>
 
+ <joint name="starr" type="fixed">
+    <parent link="GoldbarrenPart1:1"/>
+    <child link="GoldbarrenPart1:2"/>
+    <origin xyz="0 0 0"/>
+  </joint>
  
 </robot>
