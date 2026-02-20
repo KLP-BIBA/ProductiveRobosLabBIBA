@@ -18,7 +18,7 @@
     <visual>
      <origin xyz="50 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/GoldbarrenPart1_AsciiMeter.stl"/>
+            <mesh filename="../12345/GoldbarrenPart1_cm.stl"/>
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
     </visual>
@@ -28,7 +28,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/GoldbarrenPart1_AsciiMeter.stl"/>
+            <mesh filename="../12345/GoldbarrenPart1_cm.stl"/>
  
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
