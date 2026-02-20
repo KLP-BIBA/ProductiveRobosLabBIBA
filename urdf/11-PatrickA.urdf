@@ -19,6 +19,7 @@
       <geometry>  
             <mesh filename="../12345/GoldbarrenPart1.stl"/>
       </geometry> 
+         <material name="Metall - 1600F (heiß)" />
     </visual>
   </link>
  
