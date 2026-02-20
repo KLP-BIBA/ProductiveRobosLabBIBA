@@ -17,7 +17,7 @@
     <visual>
      <origin xyz="100 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/GoldbarrenPart1.stl"/>
+            <mesh scale="0.5" filename="../12345/GoldbarrenPart1.stl"/>
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
     </visual>
