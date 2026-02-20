@@ -8,7 +8,7 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <cylinder length="1" radius="0.2"/>
+        <cylinder length="42" radius="0.2"/>
       </geometry>
     </visual>
   </link>
