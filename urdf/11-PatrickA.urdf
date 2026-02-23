@@ -1,4 +1,4 @@
-r<?xml version="1.0"?>
+<?xml version="1.0"?>
 <!--Exported at 11.02.2026 15:20:35  -->
 <!--by BIBA-->
 <robot name="GoldbarrenGroup">
@@ -28,7 +28,7 @@ r<?xml version="1.0"?>
     <visual>
      <origin xyz="-5 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/GoldbarrenPart1_meter.stl"/>
+            <mesh filename="../12345/Stehtisch_meter.stl"/>
  
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
