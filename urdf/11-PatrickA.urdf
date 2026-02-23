@@ -26,7 +26,7 @@
 
  <link name="GoldbarrenPart1:2">
     <visual>
-     <origin xyz="0 0 0" rpy="0 0 0" />
+     <origin xyz="-40 0 0" rpy="0 0 0" />
       <geometry>  
             <mesh filename="../12345/GoldbarrenPart1_meter.stl"/>
  
@@ -38,13 +38,13 @@
   <joint name="base_to_right_leg" type="fixed">
     <parent link="base_link"/>
     <child link="GoldbarrenPart1:1"/>
-    <origin xyz="50 0 0.25"/>
+    <origin xyz="30 0 0.25"/>
   </joint>
 
  <joint type="fixed" name="Starr:1">
     <parent link="GoldbarrenPart1:1"/>
     <child link="GoldbarrenPart1:2"/>
-    <origin xyz="0 20 0" rpy="0 0 0"/> 
+    <origin xyz="0 0 0" rpy="0 0 0"/> 
   </joint>
  
 </robot>
