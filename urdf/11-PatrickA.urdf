@@ -35,6 +35,17 @@
     </visual>
   </link>
 
+<link name="schutzzaun_meter">
+    <visual>
+     <origin xyz="-5 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/schutzzaun_meter.stl"/>
+ 
+      </geometry> 
+         <material name="Metall - 1600F (heiß)" />
+    </visual>
+
+  </link>
   <joint name="base_to_right_leg" type="fixed">
     <parent link="base_link"/>
     <child link="GoldbarrenPart1:1"/>
@@ -46,5 +57,10 @@
     <child link="Stehtisch_meter:1"/>
     <origin xyz="0 0 0" rpy="0 0 0"/> 
   </joint>
- 
+
+ <joint type="fixed" name="Starr:1">
+    <parent link="GoldbarrenPart1:1"/>
+    <child link="schutzzaun_meter"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/> 
+  </joint>
 </robot>
