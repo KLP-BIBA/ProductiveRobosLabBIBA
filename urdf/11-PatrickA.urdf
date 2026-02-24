@@ -61,6 +61,6 @@
  <joint type="fixed" name="Starr:1">
     <parent link="GoldbarrenPart1:1"/>
     <child link="schutzzaun_meter"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/> 
+    <origin xyz="0 5 0" rpy="0 0 0"/> 
   </joint>
 </robot>
