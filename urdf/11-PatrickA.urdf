@@ -54,7 +54,7 @@
 
 
   <joint name="base_to_right_leg" type="fixed">
-    <parent link="base_link"/>
+    <parent link="schutzzaun_meter"/>
     <child link="GoldbarrenPart1:1"/>
     <origin xyz="0 0 0.25"/>
   </joint>
