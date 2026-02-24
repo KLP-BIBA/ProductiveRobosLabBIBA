@@ -46,6 +46,13 @@
     </visual>
 
   </link>
+ <joint type="fixed" name="Starr:1">
+    <parent link="base_link"/>
+    <child link="schutzzaun_meter"/>
+    <origin xyz="0 5 0.5" rpy="0 0 0"/> 
+  </joint>
+
+
   <joint name="base_to_right_leg" type="fixed">
     <parent link="base_link"/>
     <child link="GoldbarrenPart1:1"/>
@@ -58,9 +65,5 @@
     <origin xyz="0 0 0" rpy="0 0 0"/> 
   </joint>
 
- <joint type="fixed" name="Starr:1">
-    <parent link="base_link"/>
-    <child link="schutzzaun_meter"/>
-    <origin xyz="0 5 0" rpy="0 0 0"/> 
-  </joint>
+
 </robot>
