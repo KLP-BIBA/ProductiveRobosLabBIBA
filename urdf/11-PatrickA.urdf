@@ -24,7 +24,7 @@
     </visual>
   </link>
 
- <link name="GoldbarrenPart1:2">
+ <link name="Stehtisch_meter:1">
     <visual>
      <origin xyz="-5 0 0" rpy="0 0 0" />
       <geometry>  
@@ -43,7 +43,7 @@
 
  <joint type="fixed" name="Starr:1">
     <parent link="GoldbarrenPart1:1"/>
-    <child link="GoldbarrenPart1:2"/>
+    <child link="Stehtisch_meter:1"/>
     <origin xyz="0 0 0" rpy="0 0 0"/> 
   </joint>
  
