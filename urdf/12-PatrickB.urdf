@@ -31,9 +31,21 @@
             <mesh filename="../12345/UR10_Size4_Joint_meter.stl"/>
  
       </geometry> 
+     
+    </visual>
+  </link>
+
+<link name="Second_Gelenk">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/UR10_Size4_Joint_meter.stl"/>
+ 
+      </geometry> 
          <material name="Metall - 1600F (heiß)" />
     </visual>
   </link>
+
 
   <joint name="base_to_right_leg" type="fixed">
     <parent link="base_link"/>
@@ -41,9 +53,17 @@
     <origin xyz="0 1 0"/>
   </joint>
 
-  <joint name="first_joint" type="fixed">
+<joint name="first_joint" type="continuous">
+         <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="U10_Base"/>
     <child link="First_Gelenk"/>
-    <origin xyz="0 0 0.1"/>
+    <origin xyz="0 0 0.128"/>
+  </joint>
+
+<joint name="second_joint" type="continuous">
+         <axis rpy="0 0 0" xyz="0 1 0"/>
+    <parent link="U10_Base"/>
+    <child link="Second_Gelenk"/>
+    <origin xyz="0 0.086 0.090"/>
   </joint>
 </robot>
