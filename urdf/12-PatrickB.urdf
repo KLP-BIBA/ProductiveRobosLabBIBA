@@ -47,6 +47,8 @@
   </link>
 
 
+
+
   <joint name="base_to_right_leg" type="fixed">
     <parent link="base_link"/>
     <child link="U10_Base"/>
@@ -59,11 +61,11 @@
     <child link="First_Gelenk"/>
     <origin xyz="0 0 0.128"/>
   </joint>
-
+ 
 <joint name="second_joint" type="continuous">
          <axis rpy="0 0 0" xyz="0 1 0"/>
-    <parent link="U10_Base"/>
+    <parent link="First_Gelenk"/>
     <child link="Second_Gelenk"/>
-    <origin xyz="0 1 1"/>
+    <origin xyz="0 -0.176 0" rpy="1.571 0 0"/>
   </joint>
 </robot>
