@@ -64,6 +64,6 @@
          <axis rpy="0 0 0" xyz="0 1 0"/>
     <parent link="U10_Base"/>
     <child link="Second_Gelenk"/>
-    <origin xyz="0 0.086 0.090"/>
+    <origin xyz="0 1 1"/>
   </joint>
 </robot>
