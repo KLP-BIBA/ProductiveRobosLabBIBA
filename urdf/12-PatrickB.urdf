@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <robot name="origins">
+
+<material name="Metall - 1600F (heiß)">
+    <color rgba="1 0.561 0.184 1" />
+  </material>
+
   <link name="base_link">
     <visual>
       <geometry>
@@ -8,19 +13,22 @@
     </visual>
   </link>
 
-  <link name="right_leg">
+  <link name="U10_Base">
     <visual>
-      <geometry>
-        <box size="0.6 0.1 0.2"/>
-      </geometry>
-      <origin rpy="0 1.57075 0" xyz="0 0 -0.3"/>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Base.stl"/>
+ 
+      </geometry> 
+         <material name="Metall - 1600F (heiß)" />
     </visual>
   </link>
 
+
   <joint name="base_to_right_leg" type="fixed">
     <parent link="base_link"/>
-    <child link="right_leg"/>
-    <origin xyz="0 -0.22 0.25"/>
+    <child link="U10_Base"/>
+    <origin xyz="0 1 0"/>
   </joint>
 
 </robot>
