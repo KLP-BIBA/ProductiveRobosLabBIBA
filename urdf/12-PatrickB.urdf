@@ -24,6 +24,16 @@
     </visual>
   </link>
 
+<link name="First_Gelenk">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Base.stl"/>
+ 
+      </geometry> 
+         <material name="Metall - 1600F (heiß)" />
+    </visual>
+  </link>
 
   <joint name="base_to_right_leg" type="fixed">
     <parent link="base_link"/>
@@ -31,4 +41,9 @@
     <origin xyz="0 1 0"/>
   </joint>
 
+  <joint name="first_joint" type="fixed">
+    <parent link="U10_Base"/>
+    <child link="First_Gelenk"/>
+    <origin xyz="0 1 0.5"/>
+  </joint>
 </robot>
