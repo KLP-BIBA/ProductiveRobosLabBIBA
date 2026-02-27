@@ -55,7 +55,7 @@
     </visual>
   </link>
 
-<link name="Third_Gelenk">
+<link name="Fourth_Gelenk">
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
@@ -96,8 +96,8 @@
 
 <joint name="fourth_joint" type="continuous">
          <axis rpy="0 0 0" xyz="0 1 0"/>
-    <parent link="Second_Gelenk"/>
-    <child link="Upper_arm"/>
+    <parent link="Upper_arm"/>
+    <child link="Fourth_Gelenk"/>
     <origin xyz="0 0.5 0" rpy="0 0 0"/>
   </joint>
 </robot>
