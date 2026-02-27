@@ -46,15 +46,17 @@
     </visual>
   </link>
 
-<link name="Upper_arm">
+<link name="LowerArmGroup">
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/UR10_Upper_arm_meter.stl"/> 
+            <mesh filename="../12345/UR10_LowerArmGroup_meter.stl"/>
+ 
       </geometry> 
+         <material name="Metall - 1600F (heiß)" />
     </visual>
   </link>
-
+ 
 <link name="Fourth_Gelenk">
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
@@ -90,13 +92,13 @@
 <joint name="third_joint" type="continuous">
           <axis rpy="0 0 0" xyz="0 1 0"/>
     <parent link="UpperArmGroup"/>
-    <child link="Upper_arm"/>
+    <child link="LowerArmGroup"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
 
 <joint name="fourth_joint" type="continuous">
          <axis rpy="0 0 0" xyz="0 1 0"/>
-    <parent link="Upper_arm"/>
+    <parent link="LowerArmGroup"/>
     <child link="Fourth_Gelenk"/>
     <origin xyz="0 0 0.46" rpy="0 0 0"/>
   </joint>
