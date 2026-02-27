@@ -100,6 +100,6 @@
          <axis rpy="0 0 0" xyz="0 1 0"/>
     <parent link="LowerArmGroup"/>
     <child link="Fourth_Gelenk"/>
-    <origin xyz="0.1 0 0.571" rpy="0 0 0"/>
+    <origin xyz="0.1 0 0.571" rpy="0 0 -1.5708"/>
   </joint>
 </robot>
