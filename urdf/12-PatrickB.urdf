@@ -61,7 +61,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/UR10_Size3Joint_meter.stl"/>
+            <mesh filename="../12345/UR10_Size2Joint_meter.stl"/>
  
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
@@ -100,7 +100,6 @@
          <axis rpy="0 0 0" xyz="0 1 0"/>
     <parent link="LowerArmGroup"/>
     <child link="Fourth_Gelenk"/>
-    <origin xyz="0 0 0.46" rpy="0 0 0"/>
+    <origin xyz="0.1 0 0.571" rpy="0 0 0"/>
   </joint>
 </robot>
-
