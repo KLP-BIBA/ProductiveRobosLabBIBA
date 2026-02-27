@@ -46,7 +46,14 @@
     </visual>
   </link>
 
-
+<link name="Upper_arm">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/UR10_Upper_arm_meter.stl"/> 
+      </geometry> 
+    </visual>
+  </link>
 
 
   <joint name="base_to_right_leg" type="fixed">
