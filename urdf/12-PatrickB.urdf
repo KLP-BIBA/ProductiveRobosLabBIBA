@@ -35,7 +35,7 @@
     </visual>
   </link>
 
-<link name="Second_Gelenk">
+<link name="UpperArmGroup">
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
@@ -82,14 +82,14 @@
 <joint name="second_joint" type="continuous">
          <axis rpy="0 0 0" xyz="0 1 0"/>
     <parent link="First_Gelenk"/>
-    <child link="Second_Gelenk"/>
+    <child link="UpperArmGroup"/>
     <origin xyz="0 -0.176 0" rpy="1.571 3.1415 0"/>
   </joint>
 
 
-<joint name="third_joint" type="fixed">
-          
-    <parent link="Second_Gelenk"/>
+<joint name="third_joint" type="continuous">
+          <axis rpy="0 0 0" xyz="0 1 0"/>
+    <parent link="UpperArmGroup"/>
     <child link="Upper_arm"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
