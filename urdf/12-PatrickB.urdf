@@ -92,8 +92,8 @@
 <joint name="third_joint" type="continuous">
           <axis rpy="0 0 0" xyz="0 1 0"/>
     <parent link="UpperArmGroup"/>
-    <child link="LowerArmGroup"/>
-    <origin xyz="0 0.1 0.61290" rpy="0 0 0"/>
+    <child link="LowerArmGroup"/> 
+ <origin xyz="0 -0.02189  0.61290" rpy="0 0 -1.5708"/>
   </joint>
 
 <joint name="fourth_joint" type="continuous">
