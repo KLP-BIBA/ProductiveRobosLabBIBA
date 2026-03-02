@@ -137,7 +137,7 @@
          <axis rpy="0 0 0" xyz="0 1 0"/>
     <parent link="Fith_Gelenk"/>
     <child link="ToolFlange"/>
-    <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+    <origin xyz="0 -0.054 0.0617" rpy="0 0 0"/>
   </joint>
 
 </robot>
