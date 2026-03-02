@@ -1,3 +1,4 @@
+
 <?xml version="1.0"?>
 <robot name="origins">
 
@@ -17,7 +18,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/UR10_Tisch.stl"/> 
+            <mesh filename="../12345/UR10_WorkBench.stl"/> 
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
     </visual>
@@ -101,18 +102,22 @@
     </visual>
   </link>
 
-  <joint name="base_to_right_leg" type="fixed">
-    <parent link="base_link"/>
-    <child link="U10_Base"/>
-    <origin xyz="0 1 0"/>
-  </joint>
+ 
 
 
   <joint name="BenchToBase" type="fixed">
     <parent link="base_link"/>
     <child link="UR10_Workbench"/>
-    <origin xyz="1 1 0"/>
+    <origin xyz="0 2 0.9"/>
   </joint>
+
+ <joint name="base_to_right_leg" type="fixed">
+    <parent link="UR10_Workbench"/>
+    <child link="U10_Base"/>
+    <origin xyz="0.420 0.475 0"/>
+  </joint>
+
+
 
 <joint name="first_joint" type="continuous">
          <axis rpy="0 0 0" xyz="0 0 1"/>
