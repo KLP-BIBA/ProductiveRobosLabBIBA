@@ -51,7 +51,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/UR10_UpperArmGroup_meter.stl"/>
+            <mesh filename="../12345/UR10/UR10_UpperArmGroup_meter.stl"/>
  
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
@@ -96,7 +96,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 -3.14592 0" />
       <geometry>  
-            <mesh filename="../12345/UR10_ToolFlange_meter.stl"/>
+            <mesh filename="../12345/UR10/UR10_ToolFlange_meter.stl"/>
  
       </geometry> 
      <material name="Metall - 1600F (heiß)" />
