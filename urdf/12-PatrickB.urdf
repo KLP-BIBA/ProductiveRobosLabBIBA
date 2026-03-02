@@ -1,10 +1,11 @@
-
 <?xml version="1.0"?>
 <robot name="origins">
 
 <material name="Metall - 1600F (heiß)">
-    <color rgba="1 0.561 0.184 1" />
+    <color rgba="0.749 0.749 0.749 1" />
   </material>
+
+ 
 
   <link name="base_link">
     <visual>
