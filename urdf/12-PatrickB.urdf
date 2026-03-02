@@ -80,6 +80,16 @@
     </visual>
   </link>
 
+<link name="ToolFlange">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/UR10_ToolFlange_meter.stl"/>
+ 
+      </geometry> 
+     <material name="Metall - 1600F (heiß)" />
+    </visual>
+  </link>
 
   <joint name="base_to_right_leg" type="fixed">
     <parent link="base_link"/>
@@ -122,4 +132,12 @@
     <child link="Fith_Gelenk"/>
     <origin xyz="0 0 -0.0617" rpy="0 -3.14592 -3.14592"/>
   </joint>
+
+<joint name="six_joint" type="continuous">
+         <axis rpy="0 0 0" xyz="0 1 0"/>
+    <parent link="Fith_Gelenk"/>
+    <child link="Fith_Gelenk"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+  </joint>
+
 </robot>
