@@ -19,7 +19,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/UR10/UR10_Tisch.stl"/> 
+            <mesh filename="../12345/UR10/UR10_WorkBench.stl"/> 
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
     </visual>
@@ -29,7 +29,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/Base.stl"/>
+            <mesh filename="../12345/UR10/UR10_Base.stl"/>
  
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
