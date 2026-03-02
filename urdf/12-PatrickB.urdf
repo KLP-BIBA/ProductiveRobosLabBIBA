@@ -59,7 +59,7 @@
  
 <link name="Fourth_Gelenk">
     <visual>
-     <origin xyz="0 0 0" rpy="0 0 0" />
+     <origin xyz="0 0 -0.0617" rpy="0 0 0" />
       <geometry>  
             <mesh filename="../12345/UR10_Size2Joint_meter.stl"/>
  
@@ -67,6 +67,19 @@
          <material name="Metall - 1600F (heiß)" />
     </visual>
   </link>
+
+ 
+<link name="Fith_Gelenk">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/UR10_Size2Joint_meter.stl"/>
+ 
+      </geometry> 
+    
+    </visual>
+  </link>
+
 
   <joint name="base_to_right_leg" type="fixed">
     <parent link="base_link"/>
@@ -100,6 +113,13 @@
          <axis rpy="0 0 0" xyz="0 1 0"/>
     <parent link="LowerArmGroup"/>
     <child link="Fourth_Gelenk"/>
-    <origin xyz="0.1 0 0.571" rpy="0 0 -1.5708"/>
+    <origin xyz="0.05601 0 0.5716" rpy="0 -3.14592 -1.5708"/>
+  </joint>
+
+<joint name="fifth_joint" type="continuous">
+         <axis rpy="0 0 0" xyz="0 1 0"/>
+    <parent link="Fourth_Gelenk"/>
+    <child link="Fith_Gelenk"/>
+    <origin xyz="0 0 -0.0617" rpy="0 -3.14592 -3.14592"/>
   </joint>
 </robot>
