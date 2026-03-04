@@ -103,17 +103,7 @@
     </visual>
   </link>
 
- <link name="TestUR3">
-    <visual>
-     <origin xyz="0 0 1" rpy="0 -3.14592 0" />
-      <geometry>  
-            <mesh filename="../12345/UR3/shoulder.dae"/>
  
-      </geometry> 
-   
-    </visual>
-  </link>
-
 
   <joint name="BenchToBase" type="fixed">
     <parent link="base_link"/>
