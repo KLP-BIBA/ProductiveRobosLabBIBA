@@ -9,7 +9,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://fanuc_cr35ia_support/meshes/cr35ia/visual/base_link.stl"/>
+        <mesh filename="../12345/CR35ia/base_link.stl"/>
       </geometry>
       <material name="">
         <color rgba="0.2784313725490196 0.2784313725490196 0.2784313725490196 1.0"/>
