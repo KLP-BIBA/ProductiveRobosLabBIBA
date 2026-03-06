@@ -23,7 +23,7 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur5/visual/base.dae"/>
+        <mesh filename="../12345/UR5/base.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -51,7 +51,7 @@
   <link name="shoulder_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur5/visual/shoulder.dae"/>
+        <mesh filename="../12345/UR5/shoulder.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -79,7 +79,7 @@
   <link name="upper_arm_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur5/visual/upperarm.dae"/>
+        <mesh filename="../12345/UR5/upperarm.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -107,7 +107,7 @@
   <link name="forearm_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur5/visual/forearm.dae"/>
+        <mesh filename="../12345/UR5/forearm.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -135,7 +135,7 @@
   <link name="wrist_1_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur5/visual/wrist1.dae"/>
+        <mesh filename="../12345/UR5/wrist1.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -163,7 +163,7 @@
   <link name="wrist_2_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur5/visual/wrist2.dae"/>
+        <mesh filename="../12345/UR5/wrist2.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -191,7 +191,7 @@
   <link name="wrist_3_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur5/visual/wrist3.dae"/>
+        <mesh filename="../12345/UR5/wrist3.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
