@@ -39,7 +39,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/schutzzaun_meter.stl"/> 
+            <mesh filename="../12345/Fences/SafetyFence_2000x2100.stl"/> 
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
     </visual>
@@ -49,7 +49,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/schutzzaun_meter.stl"/>
+            <mesh filename="../12345/Fences/SafetyFence_2000x2100.stl"/>
  
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
@@ -59,7 +59,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/schutzzaun_meter.stl"/>
+            <mesh filename="../12345/Fences/SafetyFence_2000x2100.stl"/>
  
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
