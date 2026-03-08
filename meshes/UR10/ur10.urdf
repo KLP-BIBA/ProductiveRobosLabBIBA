@@ -281,6 +281,8 @@
       -->
     <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
   </joint>
+
+
   <joint name="shoulder_pan_joint" type="revolute">
     <parent link="base_link_inertia"/>
     <child link="shoulder_link"/>
@@ -289,14 +291,18 @@
     <limit effort="330.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="2.0943951023931953"/>
     <dynamics damping="0" friction="0"/>
   </joint>
+
+ <!-- WARNING BIBA changed origin rpy yValue from Zero to 90  -->
+
   <joint name="shoulder_lift_joint" type="revolute">
     <parent link="shoulder_link"/>
     <child link="upper_arm_link"/>
-    <origin rpy="1.570796327 0 0" xyz="0 0 0"/>
+    <origin rpy="1.570796327 1.570796327 0" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
     <limit effort="330.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="2.0943951023931953"/>
     <dynamics damping="0" friction="0"/>
   </joint>
+
   <joint name="elbow_joint" type="revolute">
     <parent link="upper_arm_link"/>
     <child link="forearm_link"/>
