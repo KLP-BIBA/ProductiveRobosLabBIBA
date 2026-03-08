@@ -70,7 +70,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/CR35Fanuc_meter.stl"/>
+            <mesh filename="../12345/CR35ia/CR35ia_StaticDummy.stl"/>
  
       </geometry> 
          <material name="Metall - 1600F (heiß)" />
