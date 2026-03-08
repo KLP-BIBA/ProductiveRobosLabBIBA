@@ -119,7 +119,7 @@
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/base.dae"/>
+        <mesh filename="../12345/UR10/base.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -141,7 +141,7 @@
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/shoulder.dae"/>
+        <mesh filename="../12345/UR10/shoulder.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -163,7 +163,7 @@
     <visual>
       <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0.220941"/>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/upperarm.dae"/>
+        <mesh filename="../12345/UR10/upperarm.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -185,7 +185,7 @@
     <visual>
       <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0.049042"/>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/forearm.dae"/>
+        <mesh filename="../12345/UR10/forearm.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -208,7 +208,7 @@
       <!-- TODO: Move this to a parameter -->
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 -0.1149"/>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/wrist1.dae"/>
+        <mesh filename="../12345/UR10/wrist1.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -230,7 +230,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.1158"/>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/wrist2.dae"/>
+        <mesh filename="../12345/UR10/wrist2.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -252,7 +252,7 @@
     <visual>
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 -0.0922"/>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/wrist3.dae"/>
+        <mesh filename="../12345/UR10/wrist3.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
