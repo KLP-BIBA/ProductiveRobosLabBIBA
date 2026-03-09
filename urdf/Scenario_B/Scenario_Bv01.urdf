@@ -369,11 +369,9 @@
     <parent link="flange"/>
     <child link="tool0"/>
   </joint>
-
+ 
   <!-- BIBA environment to robot -->
 
-  <joint name="BenchToBase" type="fixed">
-  <!-- BIBA environment to robot -->
  <link name="Scenario_base"/>
 
 <link name="UR10_Workbench">
