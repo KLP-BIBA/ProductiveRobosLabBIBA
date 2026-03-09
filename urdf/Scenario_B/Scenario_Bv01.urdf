@@ -373,20 +373,31 @@
   <!-- BIBA environment to robot -->
 
   <joint name="BenchToBase" type="fixed">
-    <parent link="base_link"/>
+  <!-- BIBA environment to robot -->
+ <link name="Scenario_base"/>
+
+<link name="UR10_Workbench">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workstations/Slottted_Plate_Bench_700x1500.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
+ <joint name="BenchToScenario" type="fixed">
+
+    <parent link="Scenario_base"/>
     <child link="UR10_Workbench"/>
     <origin xyz="0 2 0.9"/>
   </joint>
 
- <link name="UR10_Workbench">
-    <visual>
-     <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>  
-            <mesh filename="../12345/meshes/Workstations/Slottted_Plate_Bench_700x1500.stl"/> 
-      </geometry> 
-         <material name="Metall - 1600F (heiß)" />
-    </visual>
-  </link>
 
+  <joint name="RobotToBench" type="fixed">
+
+    <parent link="UR10_Workbench"/>
+    <child link="base_link"/>
+      <origin xyz="0.420 0.475 0"/>
+  </joint>
 
 </robot>
