@@ -1,1 +1,29 @@
+<robot name="Workstations">
+<link name="base_link">
+<visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="22" radius="0.1"/>
+      </geometry>
+    </visual>
+  </link>
 
+<link name="Slottted_Plate_Bench_700x1500">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workstations/Slottted_Plate_Bench_700x1500.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
+
+ <joint name="BenchTobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="UR10_Workbench"/>
+    <origin xyz="0 2 0.9"/>
+  </joint>
+
+ 
+
+</robot>
