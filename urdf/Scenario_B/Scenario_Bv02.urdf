@@ -370,10 +370,9 @@
     <child link="tool0"/>
   </joint>
 
+ 
   <!-- BIBA environment to robot -->
 
-  <joint name="BenchToBase" type="fixed">
-  <!-- BIBA environment to robot -->
  <link name="base_link"/>
 
 <link name="UR10_Workbench">
