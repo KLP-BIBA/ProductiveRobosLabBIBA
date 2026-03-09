@@ -115,6 +115,7 @@
   </transmission>
 
   <!-- links: main serial chain -->
+ <link name="base_link"/>
   <link name="UR10_base_link"/>
   <link name="base_link_inertia">
     <visual>
