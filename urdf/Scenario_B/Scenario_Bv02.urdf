@@ -407,7 +407,7 @@
  <joint name="BenchTobaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="UR10_Workbench"/>
-    <origin xyz="0 4 0.9"/>
+    <origin xyz="-1.5 2 0.9"/>
   </joint>
 
 <joint name="BenchToScenario" type="fixed">
