@@ -113,6 +113,7 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+
   <!-- links: main serial chain -->
   <link name="base_link"/>
   <link name="base_link_inertia">
@@ -270,6 +271,8 @@
       <inertia ixx="0.00011792166116465" ixy="0.0" ixz="0.0" iyy="0.00011792166116465" iyz="0.0" izz="0.00020452500000000002"/>
     </inertial>
   </link>
+
+
   <!-- joints: main serial chain -->
   <joint name="base_link-base_link_inertia" type="fixed">
     <parent link="base_link"/>
@@ -335,6 +338,9 @@
     <limit effort="56.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
     <dynamics damping="0" friction="0"/>
   </joint>
+
+
+
   <!-- ROS-Industrial 'base' frame: base_link to UR 'Base' Coordinates transform -->
   <link name="base"/>
   <joint name="base_link-base_fixed_joint" type="fixed">
@@ -347,6 +353,7 @@
     <parent link="base_link"/>
     <child link="base"/>
   </joint>
+
   <!-- ROS-Industrial 'flange' frame: attachment point for EEF models -->
   <link name="flange"/>
   <joint name="wrist_3-flange" type="fixed">
@@ -362,4 +369,24 @@
     <parent link="flange"/>
     <child link="tool0"/>
   </joint>
+
+  <!-- BIBA environment to robot -->
+
+  <joint name="BenchToBase" type="fixed">
+    <parent link="base_link"/>
+    <child link="UR10_Workbench"/>
+    <origin xyz="0 2 0.9"/>
+  </joint>
+
+ <link name="UR10_Workbench">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/meshes/Workstations/Slottted_Plate_Bench_700x1500.stl"/> 
+      </geometry> 
+         <material name="Metall - 1600F (heiß)" />
+    </visual>
+  </link>
+
+
 </robot>
