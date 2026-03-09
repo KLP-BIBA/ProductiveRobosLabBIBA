@@ -17,6 +17,17 @@
     </visual>
   </link>
 
+<link name="PartitionWall_2100x790">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Fences/PartitionWall_2100x790.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
+
+
 <link name="SafetyFence_2000x2100">
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
@@ -26,11 +37,18 @@
     </visual>
   </link>
 
- <joint name="PartitionWallTobaseLink" type="fixed"> 
+ <joint name="PartitionWall1800TobaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="PartitionWall_1800x790"/>
     <origin xyz="0 2 0"/>
   </joint>
+
+ <joint name="PartitionWall2100TobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="PartitionWall_2100x790"/>
+    <origin xyz="-2 2 0"/>
+  </joint>
+
 
  <joint name="SafetyFenceTobaseLink" type="fixed"> 
     <parent link="base_link"/>
