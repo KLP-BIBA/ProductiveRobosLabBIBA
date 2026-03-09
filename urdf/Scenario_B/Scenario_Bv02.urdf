@@ -385,13 +385,28 @@
     </visual>
   </link>
 
+<link name="Plate_Bench">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workstations/Slottted_Plate_Bench_700x1500.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
+
  <joint name="BenchToScenario" type="fixed">
 
     <parent link="base_link"/>
     <child link="UR10_Workbench"/>
     <origin xyz="0 2 0.9"/>
   </joint>
+<joint name="BenchToScenario" type="fixed">
 
+    <parent link="base_link"/>
+    <child link="Plate_Bench"/>
+    <origin xyz="0 -2 0.9"/>
+  </joint>
 
   <joint name="RobotToBench" type="fixed">
 
