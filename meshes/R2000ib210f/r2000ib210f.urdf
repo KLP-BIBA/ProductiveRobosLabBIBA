@@ -18,7 +18,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename=../12345/R2000ib210f/base_link.stl"/>
+        <mesh filename="../12345/R2000ib210f/base_link.stl"/>
       </geometry>
     </collision>
   </link>
