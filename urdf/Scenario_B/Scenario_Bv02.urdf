@@ -116,9 +116,18 @@
 
   <!-- links: main serial chain -->
 
- <link name="base_link"/>
+ <link name="base_link">
+<visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="22" radius="0.1"/>
+      </geometry>
+    </visual>
+  </link>
 
   <link name="UR10_base_link"/>
+ 
+
   <link name="base_link_inertia">
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
@@ -395,17 +404,16 @@
   </link>
 
 
- <joint name="BenchToScenario" type="fixed">
-
+ <joint name="BenchTobaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="UR10_Workbench"/>
-    <origin xyz="0 2 0.9"/>
+    <origin xyz="0 4 0.9"/>
   </joint>
-<joint name="BenchToScenario" type="fixed">
 
+<joint name="BenchToScenario" type="fixed">
     <parent link="base_link"/>
     <child link="Plate_Bench"/>
-    <origin xyz="0 -2 0.9"/>
+    <origin xyz="0 2 0.9"/>
   </joint>
 
   <joint name="RobotToBench" type="fixed">
