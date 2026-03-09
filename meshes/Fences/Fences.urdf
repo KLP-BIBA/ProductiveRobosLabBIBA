@@ -1,1 +1,42 @@
+<robot name="Workstations">
+<link name="base_link">
+<visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="22" radius="0.1"/>
+      </geometry>
+    </visual>
+  </link>
 
+<link name="PartitionWall_1800x790">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Fences/PartitionWall_1800x790.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
+<link name="SafetyFence_2000x2100">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Fences/SafetyFence_2000x2100.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
+ <joint name="PartitionWallTobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="PartitionWall_1800x790"/>
+    <origin xyz="0 2 0"/>
+  </joint>
+
+ <joint name="SafetyFenceTobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="SafetyFence_2000x2100"/>
+    <origin xyz="0 3 0"/>
+  </joint>
+
+
+</robot>
