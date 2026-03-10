@@ -1,10 +1,17 @@
 <robot name="Workstations">
+
+ <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+
 <link name="base_link">
 <visual>
-    <origin xyz="0 0 0" rpy="0 0 0" />
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
       <geometry>
-        <cylinder length="22" radius="0.1"/>
+        <cylinder length="1" radius="0.02"/>
       </geometry>
+   <material name="red"/>
     </visual>
   </link>
 
@@ -29,15 +36,14 @@
 
  <joint name="BenchTobaseLink" type="fixed"> 
     <parent link="base_link"/>
-    <child link="UR10_Workbench"/>
-    <origin xyz="0 2 0.9"/>
+    <child link="Slottted_Plate_Bench_700x1500"/>
+    <origin xyz="2 1 0.9"/>
   </joint>
 
   <joint name="test" type="fixed"> 
     <parent link="base_link"/>
     <child link="conveyerTable"/>
-    <origin xyz="0 2 0.9"/>
+    <origin xyz="-3 2 0.9"/>
   </joint>
-
 
 </robot>
