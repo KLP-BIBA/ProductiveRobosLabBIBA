@@ -17,6 +17,15 @@
     </visual>
   </link>
 
+<link name="conveyerTable">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workstations/transportband01.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
 
  <joint name="BenchTobaseLink" type="fixed"> 
     <parent link="base_link"/>
@@ -24,6 +33,11 @@
     <origin xyz="0 2 0.9"/>
   </joint>
 
- 
+  <joint name="test" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="conveyerTable"/>
+    <origin xyz="0 2 0.9"/>
+  </joint>
+
 
 </robot>
