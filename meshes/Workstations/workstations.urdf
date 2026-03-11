@@ -4,7 +4,6 @@
     <color rgba="1 0 0 1"/>
   </material>
 
-
 <link name="base_link">
 <visual>
     <origin xyz="0 0 0.5" rpy="0 0 0" />
@@ -15,11 +14,20 @@
     </visual>
   </link>
 
-<link name="Slottted_Plate_Bench_700x1500">
+<link name="Slotted_Plate_Bench_700x1500">
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/Workstations/Slottted_Plate_Bench_700x1500.stl"/> 
+            <mesh filename="../12345/Workstations/Slotted_Plate_Bench_700x1500.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
+<link name="WoodPlate_Bench_700x1500x900">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workstations/WoodPlate_Bench_700x1500x900.stl"/> 
       </geometry>  
     </visual>
   </link>
@@ -34,11 +42,18 @@
   </link>
 
 
- <joint name="BenchTobaseLink" type="fixed"> 
+ <joint name="Slotted_Plate_Bench_700x1500TobaseLink" type="fixed"> 
     <parent link="base_link"/>
-    <child link="Slottted_Plate_Bench_700x1500"/>
+    <child link="Slotted_Plate_Bench_700x1500"/>
     <origin xyz="2 1 0.9"/>
   </joint>
+
+ <joint name="WoodPlate_Bench_700x1500x900TobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="WoodPlate_Bench_700x1500x900"/>
+    <origin xyz="2 3 0.9"/>
+  </joint>
+
 
   <joint name="test" type="fixed"> 
     <parent link="base_link"/>
