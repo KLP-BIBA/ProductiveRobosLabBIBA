@@ -15,11 +15,11 @@
   </link>
  
 
-<link name="template">
+<link name="flower_vase_170x118">
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/Fences/template.stl"/> 
+            <mesh filename="../12345/Fences/flower_vase_170x118.stl"/> 
       </geometry>  
     </visual>
   </link>
@@ -28,8 +28,8 @@
 
  <joint name="PartitionWall1800TobaseLink" type="fixed"> 
     <parent link="base_link"/>
-    <child link="PartitionWall_1800x790"/>
-    <origin xyz="0 2 0"/>
+    <child link="flower_vase_170x118"/>
+    <origin xyz="1 1 0"/>
   </joint>
  
 </robot>
