@@ -5,14 +5,22 @@
 <material name="Metall - 1600F (heiß)">
     <color rgba="1 0.561 0.184 1" />
   </material>
-  <link name="base_link">
-    <visual>
-    <origin xyz="0 0 21" rpy="0 0 0" />
+
+
+<material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+<link name="base_link">
+<visual>
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
       <geometry>
-        <cylinder length="42" radius="0.2"/>
+        <cylinder length="1" radius="0.02"/>
       </geometry>
+   <material name="red"/>
     </visual>
   </link>
+ 
  
  <link name="GoldbarrenPart1:1">
     <visual>
