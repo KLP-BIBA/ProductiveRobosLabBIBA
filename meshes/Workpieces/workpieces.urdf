@@ -1,0 +1,35 @@
+<robot name="Workpieces">
+
+<material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+<link name="base_link">
+<visual>
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="1" radius="0.02"/>
+      </geometry>
+   <material name="red"/>
+    </visual>
+  </link>
+ 
+
+<link name="template">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Fences/template.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
+ 
+
+ <joint name="PartitionWall1800TobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="PartitionWall_1800x790"/>
+    <origin xyz="0 2 0"/>
+  </joint>
+ 
+</robot>
