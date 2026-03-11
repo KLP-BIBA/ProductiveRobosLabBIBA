@@ -1,12 +1,19 @@
 <robot name="Workstations">
+
+<material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
 <link name="base_link">
 <visual>
-    <origin xyz="0 0 0" rpy="0 0 0" />
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
       <geometry>
-        <cylinder length="22" radius="0.1"/>
+        <cylinder length="1" radius="0.02"/>
       </geometry>
+   <material name="red"/>
     </visual>
   </link>
+ 
 
 <link name="PartitionWall_1800x790">
     <visual>
