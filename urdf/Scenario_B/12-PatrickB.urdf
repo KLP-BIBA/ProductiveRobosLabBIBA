@@ -5,15 +5,20 @@
     <color rgba="0.749 0.749 0.749 1" />
   </material>
 
- 
+ <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
 
-  <link name="base_link">
-    <visual>
+<link name="base_link">
+<visual>
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
       <geometry>
-        <cylinder length="0.6" radius="0.2"/>
+        <cylinder length="1" radius="0.02"/>
       </geometry>
+   <material name="red"/>
     </visual>
   </link>
+ 
 
  <link name="UR10_Workbench">
     <visual>
