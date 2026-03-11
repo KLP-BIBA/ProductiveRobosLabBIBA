@@ -24,12 +24,25 @@
     </visual>
   </link>
 
- 
+<link name="Monitor_965x710">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workpieces/Monitor_965x710.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
 
  <joint name="PartitionWall1800TobaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="flower_vase_170x118"/>
     <origin xyz="1 1 0"/>
   </joint>
- 
+
+ <joint name="Monitor_965x710TobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="Monitor_965x710"/>
+    <origin xyz="1 -1 0"/>
+  </joint>
+
 </robot>
