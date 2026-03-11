@@ -19,7 +19,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/Fences/flower_vase_170x118.stl"/> 
+            <mesh filename="../12345/Workpieces/flower_vase_170x118.stl"/> 
       </geometry>  
     </visual>
   </link>
