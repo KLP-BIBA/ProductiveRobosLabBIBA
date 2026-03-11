@@ -41,24 +41,38 @@
     </visual>
   </link>
 
+<link name="Stele_600x600x1015">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workstations/Stele_600x600x1015.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
 
- <joint name="Slotted_Plate_Bench_700x1500TobaseLink" type="fixed"> 
+
+ <joint name="Slotted_Plate_Bench_700x1500ToBaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="Slotted_Plate_Bench_700x1500"/>
     <origin xyz="2 1 0.9"/>
   </joint>
 
- <joint name="WoodPlate_Bench_700x1500x900TobaseLink" type="fixed"> 
+ <joint name="WoodPlate_Bench_700x1500x900ToBaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="WoodPlate_Bench_700x1500x900"/>
     <origin xyz="2 3 0.9"/>
   </joint>
 
 
-  <joint name="test" type="fixed"> 
+  <joint name="conveyerTableToBaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="conveyerTable"/>
-    <origin xyz="-3 2 0.9"/>
+    <origin xyz="-3 1 0"/>
   </joint>
 
+<joint name="Stele_600x600x1015ToBaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="Stele_600x600x1015"/>
+    <origin xyz="-3 2 0.9"/>
+  </joint>
 </robot>
