@@ -389,7 +389,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/Workstations/Slottted_Plate_Bench_700x1500.stl"/> 
+            <mesh filename="../12345/Workstations/Slotted_Plate_Bench_700x1500.stl"/> 
       </geometry>  
     </visual>
   </link>
@@ -398,7 +398,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/Workstations/Slottted_Plate_Bench_700x1500.stl"/> 
+            <mesh filename="../12345/Workstations/Slotted_Plate_Bench_700x1500.stl"/> 
       </geometry>  
     </visual>
   </link>
