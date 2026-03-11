@@ -67,12 +67,12 @@
   <joint name="conveyerTableToBaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="conveyerTable"/>
-    <origin xyz="-3 1 0"/>
+    <origin xyz="-3 1 0.9"/>
   </joint>
 
 <joint name="Stele_600x600x1015ToBaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="Stele_600x600x1015"/>
-    <origin xyz="-3 2 0.9"/>
+    <origin xyz="-3 2 0"/>
   </joint>
 </robot>
