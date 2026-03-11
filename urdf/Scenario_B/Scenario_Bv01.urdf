@@ -371,8 +371,20 @@
   </joint>
  
   <!-- BIBA environment to robot -->
+<material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
 
- <link name="Scenario_base"/>
+<link name="Scenario_base">
+<visual>
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="1" radius="0.02"/>
+      </geometry>
+   <material name="red"/>
+    </visual>
+  </link>
+ 
 
 <link name="UR10_Workbench">
     <visual>
