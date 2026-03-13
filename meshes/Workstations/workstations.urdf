@@ -20,6 +20,9 @@
       <geometry>  
             <mesh filename="../12345/Workstations/Slotted_Plate_Bench_700x1500.stl"/> 
       </geometry>  
+<material name="Alloy_grey">
+        <color rgba="0.701 0.701 0.701 1"/>
+      </material>
     </visual>
   </link>
 
