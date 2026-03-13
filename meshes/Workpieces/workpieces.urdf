@@ -31,7 +31,7 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
-            <mesh filename="../12345/Workpieces/flower_vase_170x118.stl"/> 
+            <mesh filename="../12345/Workpieces/flower_vase_162x185.stl"/> 
       </geometry>  
  <material name="BIBA_red">
         <color rgba="0.929 0.109 0.141 0.6"/>
