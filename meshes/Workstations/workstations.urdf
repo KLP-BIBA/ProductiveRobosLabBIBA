@@ -47,6 +47,9 @@
       <geometry>  
             <mesh filename="../12345/Workstations/Stele_600x600x1015.stl"/> 
       </geometry>  
+      <material name="BIBA_red">
+        <color rgba="0.929 0.109 0.141 1"/>
+      </material>
     </visual>
   </link>
 
