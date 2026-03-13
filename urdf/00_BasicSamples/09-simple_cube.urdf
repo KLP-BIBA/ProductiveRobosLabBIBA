@@ -3,7 +3,7 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="../12345/simple_cube.dae"/>
+        <mesh filename="../12345/00_BasicSamples/simple_cube.dae"/>
       </geometry>
       <material name="white">
         <color rgba="1 1 1 1"/>
