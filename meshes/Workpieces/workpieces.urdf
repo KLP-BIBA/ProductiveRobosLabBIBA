@@ -58,7 +58,7 @@
  <joint name="flower_vase_162x185TobaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="flower_vase_170x118"/>
-    <origin xyz="1 1 0"/>
+    <origin xyz="1 1.5 0"/>
   </joint>
 
 
