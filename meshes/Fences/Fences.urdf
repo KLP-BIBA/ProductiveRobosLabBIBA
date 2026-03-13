@@ -21,6 +21,9 @@
       <geometry>  
             <mesh filename="../12345/Fences/PartitionWall_1800x790.stl"/> 
       </geometry>  
+     <material name="BIBA_red">
+        <color rgba="0.929 0.109 0.141 1"/>
+      </material>
     </visual>
   </link>
 
@@ -45,6 +48,9 @@
       <geometry>  
             <mesh filename="../12345/Fences/SafetyFence_2000x2100.stl"/> 
       </geometry>  
+           <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
     </visual>
   </link>
 
