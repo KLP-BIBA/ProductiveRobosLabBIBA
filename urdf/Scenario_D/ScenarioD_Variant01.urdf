@@ -5,7 +5,18 @@
 <!-- =================================================================================== -->
 <robot name="fanuc_cr35ia">
   <!-- links: main serial chain -->
-  <link name="base_link">
+
+<link name="base_link">
+<visual>
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="1" radius="0.02"/>
+      </geometry>
+   <material name="red"/>
+    </visual>
+  </link>
+
+  <link name="robot_base">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -124,10 +135,36 @@
       </geometry>
     </collision>
   </link>
+
+<link name="ConveyerTable">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workstations/transportband02.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
+
   <!-- joints: main serial chain -->
+
+ <joint name="RobotBaseTobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="robot_base"/>
+    <origin xyz="1 1 0"/>
+  </joint>
+
+ <joint name="ConveyerTableTobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="ConveyerTable"/>
+    <origin xyz="-1 1 0"/>
+  </joint>
+
+
+
   <joint name="joint_1" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 1.180"/>
-    <parent link="base_link"/>
+    <parent link="robot_base"/>
     <child link="link_1"/>
     <axis xyz="0 0 1"/>
     <limit effort="0" lower="-2.9670" upper="2.9670" velocity="3.1415"/>
