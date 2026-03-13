@@ -24,9 +24,21 @@
  <material name="BIBA_red">
         <color rgba="0.929 0.109 0.141 0.6"/>
       </material> 
-
     </visual>
   </link>
+
+<link name="flower_vase_162x185">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workpieces/flower_vase_170x118.stl"/> 
+      </geometry>  
+ <material name="BIBA_red">
+        <color rgba="0.929 0.109 0.141 0.6"/>
+      </material> 
+    </visual>
+  </link>
+
 
 <link name="Monitor_965x710">
     <visual>
@@ -37,11 +49,18 @@
     </visual>
   </link>
 
- <joint name="PartitionWall1800TobaseLink" type="fixed"> 
+ <joint name="flower_vase_170x118TobaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="flower_vase_170x118"/>
     <origin xyz="1 1 0"/>
   </joint>
+
+ <joint name="flower_vase_162x185TobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="flower_vase_170x118"/>
+    <origin xyz="1 1 0"/>
+  </joint>
+
 
  <joint name="Monitor_965x710TobaseLink" type="fixed"> 
     <parent link="base_link"/>
