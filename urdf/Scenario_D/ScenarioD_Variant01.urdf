@@ -12,8 +12,11 @@
       <geometry>
         <cylinder length="1" radius="0.02"/>
       </geometry>
-   <material name="red"/>
-    </visual>
+<material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+     </visual>
   </link>
 
   <link name="robot_base">
@@ -136,31 +139,70 @@
     </collision>
   </link>
 
-<link name="ConveyerTable">
+<link name="ConveyerTable01">
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>  
             <mesh filename="../12345/Workstations/transportband02.stl"/> 
-      </geometry>  
+      </geometry>    
+<material name="alloyGrey">
+    <color rgba="0.701 0.701 0.701 1"/>
+  </material>
     </visual>
   </link>
 
+<link name="ConveyerTable02">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workstations/transportband02.stl"/> 
+      </geometry>    
+<material name="alloyGrey">
+    <color rgba="0.701 0.701 0.701 1"/>
+  </material>
+    </visual>
+  </link>
+
+ 
+
+<link name="WoodPlate_Bench_700x1500x900">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workstations/WoodPlate_Bench_700x1500x900.stl"/> 
+      </geometry>  
+<material name="alloyGrey">
+    <color rgba="0.701 0.701 0.701 1"/>
+  </material>
+    </visual>
+  </link>
 
   <!-- joints: main serial chain -->
 
  <joint name="RobotBaseTobaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="robot_base"/>
-    <origin xyz="1 1 0"/>
+    <origin xyz="1 0 0"/>
   </joint>
 
- <joint name="ConveyerTableTobaseLink" type="fixed"> 
+ <joint name="ConveyerTable01TobaseLink" type="fixed"> 
     <parent link="base_link"/>
-    <child link="ConveyerTable"/>
-    <origin xyz="-1 1 0"/>
+    <child link="ConveyerTable01"/>
+    <origin xyz="1 -1.2 0.9"/>
+  </joint>
+
+ <joint name="ConveyerTable02TobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="ConveyerTable02"/>
+    <origin xyz="1 1.2 0.9"/>
   </joint>
 
 
+ <joint name="WoodPlate_Bench_700x1500x900TobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="WoodPlate_Bench_700x1500x900"/>
+    <origin rpy="0 0 1.571" xyz="3 -0.75 0.9"/>
+  </joint>
 
   <joint name="joint_1" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 1.180"/>
