@@ -31,7 +31,7 @@
             <mesh filename="../12345/Fences/PartitionWall_2100x790.stl"/> 
       </geometry>  
        <material name="BIBA_red">
-        <color rgba="0.886 0 0.101 1"/>
+        <color rgba="0.929 0.109 0.141 1"/>
       </material>
 
     </visual>
