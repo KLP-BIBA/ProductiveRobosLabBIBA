@@ -49,6 +49,27 @@
     </visual>
   </link>
 
+
+<link name="FittingPipe_694x392_PN40">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workpieces/FittingPipe_694x392_PN40.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
+<link name="Flange_270x68_PN40">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workpieces/Flange_270x68_PN40.stl"/> 
+      </geometry>  
+    </visual>
+  </link>
+
+
+
  <joint name="flower_vase_170x118TobaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="flower_vase_170x118"/>
