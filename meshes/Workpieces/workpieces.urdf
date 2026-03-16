@@ -56,6 +56,9 @@
       <geometry>  
             <mesh filename="../12345/Workpieces/FittingPipe_694x392_PN40.stl"/> 
       </geometry>  
+ <material name="BIBA_dunkelblau">
+        <color rgba="0 0.501 0 0.6"/>
+      </material> 
     </visual>
   </link>
 
@@ -65,6 +68,9 @@
       <geometry>  
             <mesh filename="../12345/Workpieces/Flange_270x68_PN40.stl"/> 
       </geometry>  
+ <material name="BIBA_dunkelblau">
+        <color rgba="0 0.501 0 0.6"/>
+      </material> 
     </visual>
   </link>
 
