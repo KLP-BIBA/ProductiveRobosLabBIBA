@@ -99,13 +99,13 @@
  <joint name="FittingPipe_694x392_PN40TobaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="FittingPipe_694x392_PN40"/>
-    <origin xyz="1.5 -1 0"/>
+    <origin xyz="-1.5 -1 0"/>
   </joint>
 
  <joint name="Flange_270x68_PN40TobaseLink" type="fixed"> 
     <parent link="base_link"/>
     <child link="Flange_270x68_PN40"/>
-    <origin xyz="2 -1 0"/>
+    <origin xyz="-2 -1 0"/>
   </joint>
 
 
