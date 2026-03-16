@@ -35,7 +35,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://onrobot_rg2_visualization/meshes/visual/outer_knuckle.stl"/>
+        <mesh filename="../12345/Grippers/OnrobotRG2/visual/outer_knuckle.stl"/>
       </geometry>
       <material name="">
         <color rgba="0.8 0.8 0.8 1"/>
