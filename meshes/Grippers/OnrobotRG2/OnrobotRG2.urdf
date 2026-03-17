@@ -4,6 +4,18 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="onrobot_rg2_model">
+
+<link name="base_link">
+<visual>
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="1" radius="0.02"/>
+      </geometry>
+   <material name="red"/>
+    </visual>
+  </link>
+
+
   <link name="onrobot_rg2_base_link">
     <inertial>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
@@ -158,6 +170,16 @@
       </geometry>
     </collision>
   </link>
+
+
+<joint name="test" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="onrobot_rg2_base_link"/>
+    <origin xyz="0.3 0 0"/>
+  </joint>
+
+
+
   <joint name="finger_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0 -0.017178 0.125797"/>
     <parent link="onrobot_rg2_base_link"/>
