@@ -377,7 +377,7 @@
     <!-- default toolframe: X+ left, Y+ up, Z+ front -->
     <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="0 0 0"/>
     <parent link="flange"/>
-    <child link="onrobot_rg2_base_link"/>
+    <child link="tool0"/>
   </joint>
 
 
@@ -542,7 +542,11 @@
     </collision>
   </link>
 
- 
+ <joint name="test" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="onrobot_rg2_base_link"/>
+    <origin xyz="0.3 0 0"/>
+  </joint>
 
   <joint name="finger_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0 -0.017178 0.125797"/>
