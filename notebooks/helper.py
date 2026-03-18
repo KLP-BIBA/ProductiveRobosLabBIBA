@@ -78,9 +78,9 @@ class Robots:
                 [],
             ),
             layout=widgets.Layout(
-                grid_template_columns="25% 75%",
+                grid_template_columns="25% 70%",
                 align_items="center",
-                grid_gap="5px 10px",
+                grid_gap="15px 20px",
             ),
         )
 
