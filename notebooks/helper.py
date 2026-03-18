@@ -1,5 +1,6 @@
 from pathlib import Path
-from typing import Any, Callable, Dict, Iterable
+from typing import Any, Callable, Dict, Iterable, TypeDict
+import ipywidgets as widgets
 import subprocess
 
 
@@ -15,12 +16,15 @@ def check_file(file: Path | str, ending: str = '', parameter_name: str = '') -> 
         raise ValueError(f'{message_prefix} must be pointing to an {ending} file')
     return file
 
+Robot = TypedDict("Robot", {"name": str, "path": Path, "description": str | None})
 
 class Robots:
     def __init__(self):
         self.robots_to_urdf_files: Dict[str, Path] = {}
     
-    def register(self, robot_name: str, urdf_file: Path | str):
+    def register(
+        self, robot_name: str, urdf_file: Path | str, description: str | None = None
+    ):
         if robot_name == None:
             raise ValueError('Parameter robot_name must be not None')
         try:
@@ -35,16 +39,46 @@ class Robots:
             parameter_name='urdf_file',
         )
         
-        if self.robots_to_urdf_files.get(robot_name):
-            raise ValueError(f'Robot {robot_name} is already registerd')
-        self.robots_to_urdf_files[robot_name] = urdf_file
+       if self.robots_store.get(robot_name):
+            raise ValueError(f"Robot {robot_name} is already registerd")
+        self.robots_store[robot_name] = Robot(
+            name=robot_name, path=urdf_file, description=description
+        )
 
     def get_robots(self) -> Iterable[str]:
         return self.robots_to_urdf_files.keys()
 
-    def get_urdf_file(self, robot_name: str) -> str | None:
-        return self.robots_to_urdf_files.get(robot_name)
-    
+     def get_urdf_file(self, robot_name: str) -> str | None:
+        robot = self.robots_store.get(robot_name)
+        return robot.get("path") if robot else None
+
+    def get_description(self, robot_name: str) -> str | None:
+        robot = self.robots_store.get(robot_name)
+        return robot.get("description") if robot else None
+
+    def get_selection_widget(self, create_button_fn):
+        def create_description_widget(descrition: str | None = None):
+            return widgets.HTML(
+                value=descrition or "<em>Keine Beschreibung verfügbar</em>"
+            )
+
+        return widgets.GridBox(
+            sum(
+                [
+                    [
+                        create_button_fn(robot["name"]),
+                        create_description_widget(robot["description"]),
+                    ]
+                    for robot in self.robots_store.values()
+                ],
+                [],
+            ),
+            layout=widgets.Layout(
+                grid_template_columns="25% 75%",
+                align_items="center",
+                grid_gap="5px 10px",
+            ),
+        )
 
 class Rvizweb:
     def __init__(self, make_sidecar: Callable[[], Any], iframe, display: Callable[[Any], None]):
@@ -78,12 +112,14 @@ class Launcher:
         self.open_process: subprocess.Popen | None = None
         self.process_name: str | None = None
     
-    def launch(self, 
-               urdf_file: Path | str,
-               rvizweb: Rvizweb,
-               process_name: str | None = None,
-               ferr = None, 
-               fout = None):
+    def launch(
+        self, 
+        urdf_file: Path | str,
+        rvizweb: Rvizweb,
+        process_name: str | None = None,
+        ferr = None, 
+        fout = None
+    ):
         if self.open_process:
             self.open_process.kill()
         self.open_process = subprocess.Popen(
