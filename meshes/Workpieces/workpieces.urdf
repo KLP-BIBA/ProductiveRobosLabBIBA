@@ -74,6 +74,17 @@
     </visual>
   </link>
 
+<link name="BallBearings_SKF6256_500x80">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workpieces/BallBearings_SKF6256_500x80.stl"/> 
+      </geometry>  
+ <material name="BIBA_dunkelblau">
+      <color rgba="0 0 0.5333 1"/>
+      </material> 
+    </visual>
+  </link>
 
 
  <joint name="flower_vase_170x118TobaseLink" type="fixed"> 
@@ -108,5 +119,10 @@
     <origin xyz="-2 -1 0"/>
   </joint>
 
+ <joint name="BallBearings_SKF6256_500x80TobaseLink" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="BallBearings_SKF6256_500x80"/>
+    <origin xyz="-2 -0.5 0"/>
+  </joint>
 
 </robot>
