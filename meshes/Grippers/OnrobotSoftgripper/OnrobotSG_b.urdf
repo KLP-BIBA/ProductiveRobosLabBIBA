@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
-
   <robot name="sg-b"> 
+<link name="base_link">
+<visual>
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="1" radius="0.02"/>
+      </geometry>
+   <material name="red"/>
+    </visual>
+  </link>
+
+
     <link name="OnrobotSoftgripper">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -8,7 +18,7 @@
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
       <visual name="gripper">
-        <origin xyz="0.0075 0.0055 0 " rpy="3.1415 -1.5708 0"/>
+     <origin xyz="0.0075 0.0055 0 " rpy="3.1415 -1.5708 0"/>
         <geometry>
           <mesh filename="../12345/Grippers/OnrobotSoftgripper/visual/SG-b_v1.dae" scale="1 1 1"/>
         </geometry> 
@@ -21,4 +31,12 @@
         </geometry>
       </collision>
     </link>
+
+<joint name="test" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="OnrobotSoftgripper"/>
+    <origin xyz="0.3 0 0"/>
+
+  </joint>
+
   </robot>
