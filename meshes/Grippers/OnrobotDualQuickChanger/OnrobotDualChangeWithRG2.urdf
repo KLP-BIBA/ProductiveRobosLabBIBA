@@ -282,7 +282,7 @@
       </collision>
     </link>
 
-<joint name="onrobot_rg2_DualQuickChanger_joint" type="fixed"> 
+<joint name="onrobot_Softgripper_DualQuickChanger_joint" type="fixed"> 
     <parent link="OnrobotDualQuickChanger_link"/>
     <child link="OnrobotSoftgripper"/>
     <origin rpy="0 -1.047 0" xyz="-0.0465 0 0.0638"/>
