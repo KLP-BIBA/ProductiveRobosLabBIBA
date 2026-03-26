@@ -11,7 +11,22 @@
       <geometry>
         <cylinder length="1" radius="0.02"/>
       </geometry>
-   <material name="red"/>
+   <material name="red">
+        <color rgba="0.929 0.109803 0.1411 1"/>
+      </material>
+    </visual>
+  </link>
+
+
+    <link name="OnrobotDualQuickChanger_link">
+    <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../12345/Grippers/OnrobotDualQuickChanger/visual/OnRobotDual_Quick_Changer.stl"/>
+      </geometry>
+   <material name="onrobotBlue">
+        <color rgba="0.286 0.6156 0.8549 1"/>
+      </material>
     </visual>
   </link>
 
@@ -172,10 +187,18 @@
   </link>
 
 
-<joint name="test" type="fixed"> 
+<joint name="OnrobotDualQuickChanger_base_joint" type="fixed"> 
+<origin  xyz="0.3 0 0"/>
     <parent link="base_link"/>
+    <child link="OnrobotDualQuickChanger_link"/>
+    
+  </joint>
+
+
+<joint name="onrobot_rg2_DualQuickChanger_joint" type="fixed"> 
+    <parent link="OnrobotDualQuickChanger_link"/>
     <child link="onrobot_rg2_base_link"/>
-    <origin xyz="0.3 0 0"/>
+    <origin rpy="0 1.047 0" xyz="0.0336 0 0.0549"/>
   </joint>
 
 
