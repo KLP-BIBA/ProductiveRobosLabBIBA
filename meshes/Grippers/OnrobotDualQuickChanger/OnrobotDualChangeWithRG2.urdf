@@ -259,4 +259,33 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+ 
+
+    <link name="OnrobotSoftgripper">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="gripper">
+     <origin xyz="0.0075 0.0055 0 " rpy="3.1415 -1.5708 0"/>
+        <geometry>
+          <mesh filename="../12345/Grippers/OnrobotSoftgripper/visual/SG-b_v1.dae" scale="1 1 1"/>
+        </geometry> 
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.10" radius="0.049"/>  
+		  <!-- Still doesn't cover full gripper length, but we need to dip and cover objects to grasp, so left some room-->
+        </geometry>
+      </collision>
+    </link>
+
+<joint name="onrobot_rg2_DualQuickChanger_joint" type="fixed"> 
+    <parent link="OnrobotDualQuickChanger_link"/>
+    <child link="OnrobotSoftgripper"/>
+    <origin rpy="0 -1.047 0" xyz="-0.0336 0 0.0549"/>
+  </joint>
+
 </robot>
