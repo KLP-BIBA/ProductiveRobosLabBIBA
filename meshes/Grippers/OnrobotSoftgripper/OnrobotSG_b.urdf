@@ -10,7 +10,7 @@
       <visual name="gripper">
         <origin xyz="0.0075 0.0055 0 " rpy="3.1415 -1.5708 0"/>
         <geometry>
-          <mesh filename="../12345/Grippers/OnrobotRG2/visual/SG-b_v1.dae" scale="1 1 1"/>
+          <mesh filename="../12345/Grippers/OnrobotSoftgripper/visual/SG-b_v1.dae" scale="1 1 1"/>
         </geometry> 
       </visual>
       <collision>
