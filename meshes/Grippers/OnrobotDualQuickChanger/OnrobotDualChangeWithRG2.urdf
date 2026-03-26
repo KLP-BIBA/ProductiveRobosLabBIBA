@@ -11,7 +11,7 @@
       <geometry>
         <cylinder length="1" radius="0.02"/>
       </geometry>
-   <material name="red">
+   <material name="biba-red">
         <color rgba="0.929 0.109803 0.1411 1"/>
       </material>
     </visual>
