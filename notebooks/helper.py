@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, TypedDict
 import ipywidgets as widgets
 import subprocess
-
+import tempfile
 
 def check_file(file: Path | str, ending: str = "", parameter_name: str = "") -> Path:
     message_prefix = (
