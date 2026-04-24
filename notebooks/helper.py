@@ -39,7 +39,7 @@ class Robots:
         if robot_name == "":
             raise ValueError("Parameter robot_name must to be not empty")
 
-         urdf_file = Path(urdf_file)
+        urdf_file = Path(urdf_file)
 
         if not urdf_file.exists():
             raise ValueError(f"{urdf_file} does not exist")
