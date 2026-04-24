@@ -35,13 +35,28 @@ class Robots:
             robot_name = str(robot_name)
         except:
             raise ValueError("Parameter robot_name must be of type str")
+            
         if robot_name == "":
             raise ValueError("Parameter robot_name must to be not empty")
-        urdf_file = check_file(
-            file=urdf_file,
-            ending=".urdf",
-            parameter_name="urdf_file",
-        )
+
+         urdf_file = Path(urdf_file)
+
+        if not urdf_file.exists():
+            raise ValueError(f"{urdf_file} does not exist")
+
+        # Handle XACRO
+        if urdf_file.suffix == ".xacro":
+            tmp_urdf = Path(tempfile.gettempdir()) / f"{robot_name}.urdf"
+    
+            subprocess.run(
+                ["xacro", str(urdf_file), "-o", str(tmp_urdf)],
+                check=True
+            )
+    
+            urdf_file = tmp_urdf
+    
+        elif urdf_file.suffix != ".urdf":
+            raise ValueError("File must be .urdf or .xacro")
 
         if self.robots_store.get(robot_name):
             raise ValueError(f"Robot {robot_name} is already registerd")
