@@ -21,7 +21,18 @@
   <!--property name="wrist_3_length" value="0.0823" /-->
   <!-- manually measured -->
 
-  <link name="world"/>
+  <link name="base_link">
+
+<visual>
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="1" radius="0.02"/>
+      </geometry>
+   <material name="red">
+     <color rgba="1 0 0 1.0"/>
+      </material>
+    </visual>
+  </link>
 
 <link name="Slotted_Plate_Bench_700x720x900">
     <visual>
@@ -29,14 +40,13 @@
       <geometry>  
             <mesh filename="../12345/Workstations/Slotted_Plate_Bench_700x720x900.stl"/> 
       </geometry>  
-<material name="Alloy_grey">
+        <material name="Alloy_grey">
         <color rgba="0.701 0.701 0.701 1"/>
       </material>
     </visual>
   </link>
 
-
-  <link name="base_link">
+  <link name="mybase_link">
     <visual>
       <geometry>
         <mesh filename="../12345/UR5/base.dae"/>
@@ -56,8 +66,9 @@
       <inertia ixx="0.00443333156" ixy="0.0" ixz="0.0" iyy="0.00443333156" iyz="0.0" izz="0.0072"/>
     </inertial>
   </link>
+
   <joint name="shoulder_pan_joint" type="revolute">
-    <parent link="base_link"/>
+    <parent link="mybase_link"/>
     <child link="shoulder_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.089159"/>
     <axis xyz="0 0 1"/>
@@ -315,17 +326,37 @@
   <gazebo reference="ee_link">
     <selfCollide>true</selfCollide>
   </gazebo>
+
+
+
+  <joint name="worldToBench_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="Slotted_Plate_Bench_700x720x900"/>
+    <origin rpy="0.0 0.0 0.0" xyz="1.0 0.0 0"/>
+  </joint> 
+
+  <joint name="BenchToBaseLink_joint" type="fixed">
+    <parent link="Slotted_Plate_Bench_700x720x900"/>
+    <child link="mybase_link"/>
+    <origin rpy="0.0 0.0 -1.5708" xyz="0.5 0.5 0.919"/>
+  </joint>
+
+
+
   <!-- ROS base_link to UR 'Base' Coordinates transform -->
+
   <link name="base"/>
+
   <joint name="base_link-base_fixed_joint" type="fixed">
     <!-- NOTE: this rotation is only needed as long as base_link itself is
                  not corrected wrt the real robot (ie: rotated over 180
                  degrees)
       -->
     <origin rpy="0 0 -3.141592653589793" xyz="0 0 0"/>
-    <parent link="base_link"/>
+    <parent link="mybase_link"/>
     <child link="base"/>
   </joint>
+
   <!-- Frame coincident with all-zeros TCP on UR controller -->
   <!-- link name="tool0" -->
   <joint name="wrist_3_link-tool0_fixed_joint" type="fixed">
@@ -333,18 +364,6 @@
     <!-- <origin xyz="0 0 0" rpy="0 0 0"/> -->
     <parent link="wrist_3_link"/>
     <child link="OnrobotDualQuickChanger_link"/>
-  </joint>
- 
-  <joint name="worldToBench_joint" type="fixed">
-    <parent link="world"/>
-    <child link="Slotted_Plate_Bench_700x720x900"/>
-    <origin rpy="0.0 0.0 0.0" xyz="2.0 0.0 0.0"/>
-  </joint>
- 
-  <joint name="BenchToBaseLink_joint" type="fixed">
-    <parent link="Slotted_Plate_Bench_700x720x900"/>
-    <child link="base_link"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.5 0.9"/>
   </joint>
 
 
@@ -622,14 +641,7 @@
     <origin rpy="0 -1.047 0" xyz="-0.0465 0 0.0638"/>
   </joint>
 
-
-
-
-<joint name="onrobot_Softgripper_DualQuickChanger_joint" type="fixed"> 
-    <parent link="OnrobotDualQuickChanger_link"/>
-    <child link="OnrobotSoftgripper"/>
-    <origin rpy="0 -1.047 0" xyz="-0.0465 0 0.0638"/>
-  </joint>
+ 
 
 
 </robot>
