@@ -334,9 +334,7 @@
     <parent link="wrist_3_link"/>
     <child link="OnrobotDualQuickChanger_link"/>
   </joint>
-
-
-  <link name="world"/>
+ 
   <joint name="worldToBench_joint" type="fixed">
     <parent link="world"/>
     <child link="Slotted_Plate_Bench_700x720x900"/>
