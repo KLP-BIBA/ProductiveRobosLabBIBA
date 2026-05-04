@@ -14,15 +14,11 @@
 
 
     <link name="OnrobotScrewdriver">
-      <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="0.001"/>
-        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
-      </inertial>
-      <visual name="gripper">
+      
+      <visual>
      <origin xyz="0.0075 0.0055 0 " rpy="3.1415 -1.5708 0"/>
         <geometry>
-          <mesh filename="../12345/Grippers/OnrobotScrewdriver/visual/OnrobotScrewdriverCentered.stl" scale="1 1 1"/>
+          <mesh filename="../12345/Grippers/OnrobotScrewdriver/visual/OnRobotScrewdriverCentered.stl" scale="1 1 1"/>
         </geometry> 
       </visual> 
     </link>
