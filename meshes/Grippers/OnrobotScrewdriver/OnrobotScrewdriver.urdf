@@ -1,1 +1,37 @@
+<?xml version="1.0"?>
+  <robot name="Screwdriver"> 
+<link name="base_link">
+<visual>
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="1" radius="0.02"/>
+      </geometry>
+   <material name="red"/>
+       <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
 
+
+    <link name="OnrobotScrewdriver">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="gripper">
+     <origin xyz="0.0075 0.0055 0 " rpy="3.1415 -1.5708 0"/>
+        <geometry>
+          <mesh filename="../12345/Grippers/OnrobotScrewdriver/visual/OnrobotScrewdriverCentered.stl" scale="1 1 1"/>
+        </geometry> 
+      </visual> 
+    </link>
+
+<joint name="test" type="fixed"> 
+    <parent link="base_link"/>
+    <child link="OnrobotScrewdriver"/>
+    <origin xyz="0.3 0 0"/>
+
+  </joint>
+
+  </robot>
