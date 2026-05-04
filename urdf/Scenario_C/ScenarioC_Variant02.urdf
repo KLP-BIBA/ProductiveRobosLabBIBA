@@ -20,6 +20,22 @@
   <!-- In CAD this distance is 0.930, but in the spec it is 0.09465 -->
   <!--property name="wrist_3_length" value="0.0823" /-->
   <!-- manually measured -->
+
+  <link name="world"/>
+
+<link name="Slotted_Plate_Bench_700x720x900">
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>  
+            <mesh filename="../12345/Workstations/Slotted_Plate_Bench_700x720x900.stl"/> 
+      </geometry>  
+<material name="Alloy_grey">
+        <color rgba="0.701 0.701 0.701 1"/>
+      </material>
+    </visual>
+  </link>
+
+
   <link name="base_link">
     <visual>
       <geometry>
@@ -318,11 +334,21 @@
     <parent link="wrist_3_link"/>
     <child link="OnrobotDualQuickChanger_link"/>
   </joint>
+
+
   <link name="world"/>
   <joint name="world_joint" type="fixed">
     <parent link="world"/>
-    <child link="base_link"/>
+    <child link="Slotted_Plate_Bench_700x720x900"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+  </joint>
+
+
+  <link name="world"/>
+  <joint name="world_joint" type="fixed">
+    <parent link="Slotted_Plate_Bench_700x720x900"/>
+    <child link="base_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.9"/>
   </joint>
 
 >
@@ -599,6 +625,16 @@
     <child link="OnrobotSoftgripper"/>
     <origin rpy="0 -1.047 0" xyz="-0.0465 0 0.0638"/>
   </joint>
+
+
+
+
+<joint name="onrobot_Softgripper_DualQuickChanger_joint" type="fixed"> 
+    <parent link="OnrobotDualQuickChanger_link"/>
+    <child link="OnrobotSoftgripper"/>
+    <origin rpy="0 -1.047 0" xyz="-0.0465 0 0.0638"/>
+  </joint>
+
 
 </robot>
 
