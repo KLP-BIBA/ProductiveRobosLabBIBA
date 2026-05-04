@@ -6,20 +6,23 @@
       <geometry>
         <cylinder length="1" radius="0.02"/>
       </geometry>
-   <material name="red"/>
+   <material name="red">
        <color rgba="1 0 0 1"/>
       </material>
     </visual>
   </link>
 
-
-    <link name="OnrobotScrewdriver">
+   <link name="OnrobotScrewdriver">
       
       <visual>
-     <origin xyz="0.0075 0.0055 0 " rpy="3.1415 -1.5708 0"/>
+     <origin xyz="0 0 0 " rpy="0 0 1.5708" />
         <geometry>
           <mesh filename="../12345/Grippers/OnrobotScrewdriver/visual/OnRobotScrewdriverCentered.stl" scale="1 1 1"/>
         </geometry> 
+   <material name="dummy">
+        <color rgba ="0.5020 0.5020 0.7529 1"/> 
+      </material>
+
       </visual> 
     </link>
 
@@ -29,5 +32,6 @@
     <origin xyz="0.3 0 0"/>
 
   </joint>
+ 
 
   </robot>
