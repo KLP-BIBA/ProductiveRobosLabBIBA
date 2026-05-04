@@ -337,18 +337,16 @@
 
 
   <link name="world"/>
-  <joint name="world_joint" type="fixed">
+  <joint name="worldToBench_joint" type="fixed">
     <parent link="world"/>
     <child link="Slotted_Plate_Bench_700x720x900"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
   </joint>
-
-
-  <link name="world"/>
-  <joint name="world_joint" type="fixed">
+ 
+  <joint name="BenchToBaseLink_joint" type="fixed">
     <parent link="Slotted_Plate_Bench_700x720x900"/>
     <child link="base_link"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.9"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.5 0.9"/>
   </joint>
 
 >
