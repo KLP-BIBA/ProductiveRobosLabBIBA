@@ -26,10 +26,12 @@
     local-name: iai_tracy
     uri: https://github.com/code-iai/iai_tracy.git
     version:  main
-- git:
-    local-name: robotiq_2finger_grippers
-    uri:  https://github.com/Danfoa/robotiq_2finger_grippers.git
-    version:  master
+
+# - git:
+#    local-name: robotiq_2finger_grippers
+#    uri:  https://github.com/Danfoa/robotiq_2finger_grippers.git
+#    version:  master
+
 - git: 
     local-name: iai_naive_kinematics_sim
     uri: https://github.com/code-iai/iai_naive_kinematics_sim.git
