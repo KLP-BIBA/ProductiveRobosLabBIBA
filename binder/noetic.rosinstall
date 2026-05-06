@@ -46,3 +46,9 @@
     local-name: iai_robots_peripherals
     uri: https://github.com/code-iai/iai_robot_peripherals.git
     version: main
+
+# KLP added this: 
+- git:
+   local-name: universal_robot
+    uri: https://github.com/ros-industrial/universal_robot.git
+    version: noetic-devel
