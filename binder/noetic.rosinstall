@@ -48,7 +48,8 @@
     version: main
 
 # KLP added this: 
-- git:
-   local-name: universal_robot
-    uri: https://github.com/ros-industrial/universal_robot.git
-    version: noetic-devel
+# - git:
+#  local-name: universal_robot
+#    uri: https://github.com/ros-industrial/universal_robot.git
+#    version: noetic-devel
+#
