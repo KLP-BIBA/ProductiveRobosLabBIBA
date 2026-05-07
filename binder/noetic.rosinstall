@@ -51,8 +51,8 @@
 
 # KLP added this: 
 
-- git:
-    local-name: universal_robot
-    https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git
-    version: noetic-devel
+#- git:
+#    local-name: universal_robot
+#    https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git
+#    version: noetic-devel
  
