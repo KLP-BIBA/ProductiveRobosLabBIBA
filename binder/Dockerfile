@@ -23,6 +23,9 @@ RUN pip install --upgrade wstool
 # Remove src and .rosinstall to start fresh
 RUN rm -rf /home/${NB_USER}/workspace/ros/src/* /home/${NB_USER}/workspace/ros/.rosinstall
 
+#KLP added 
+RUN apt install ros-noetic-ur-description
+
 # Initialize workspace instead of merging
 RUN export WSTOOL_NONINTERACTIVE=1 && \
     wstool init /home/${NB_USER}/workspace/ros/ /home/${NB_USER}/noetic.rosinstall && \
