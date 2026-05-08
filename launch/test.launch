@@ -1,1 +1,22 @@
+<launch>
+  <group ns="robot1">
 
+        <!-- Load UR5 URDF -->
+        <param name="robot_description"
+               command="$(find xacro)/xacro $(find ur_description)/urdf/ur5_robot.urdf.xacro"/>
+
+        <!-- Joint sliders -->
+        <node pkg="joint_state_publisher_gui"
+              type="joint_state_publisher_gui"
+              name="joint_gui"/>
+
+        <!-- Publish TF -->
+        <node pkg="robot_state_publisher"
+              type="robot_state_publisher"
+              name="state_publisher"/>
+
+    </group>
+     <node pkg="rviz"
+          type="rviz"
+          name="rviz"/>
+</launch>
