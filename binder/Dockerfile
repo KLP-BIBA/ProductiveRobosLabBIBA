@@ -29,6 +29,9 @@ RUN apt update && apt install -y \
     ros-noetic-universal-robots \
     ros-noetic-moveit
 
+RUN apt update && apt install -y \
+    python3-pyassimp
+
 # Initialize workspace instead of merging
 RUN export WSTOOL_NONINTERACTIVE=1 && \
     wstool init /home/${NB_USER}/workspace/ros/ /home/${NB_USER}/noetic.rosinstall && \
