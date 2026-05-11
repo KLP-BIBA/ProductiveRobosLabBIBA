@@ -26,8 +26,8 @@ RUN rm -rf /home/${NB_USER}/workspace/ros/src/* /home/${NB_USER}/workspace/ros/.
 #KLP added 
 RUN apt install ros-noetic-ur-description
 RUN apt update && apt install -y \
-    ros-noetic-moveit \
-    ros-noetic-ur5-moveit-config
+    ros-noetic-universal-robots \
+    ros-noetic-moveit
 
 # Initialize workspace instead of merging
 RUN export WSTOOL_NONINTERACTIVE=1 && \
