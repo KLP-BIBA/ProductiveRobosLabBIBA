@@ -22,6 +22,16 @@
         "tfPrefix": ""
       },
       "type": "urdf"
+    },
+    {
+      "isShown": true,
+      "name": "TF",
+      "type": "tf"
+    },
+    {
+      "isShown": true,
+      "name": "Interactive Marker",
+      "type": "interactive_markers"
     }
   ]
 }
