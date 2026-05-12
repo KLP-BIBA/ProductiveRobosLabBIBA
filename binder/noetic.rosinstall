@@ -60,3 +60,8 @@
     local-name: universal_robot
     uri: https://github.com/ros-industrial/universal_robot.git 
     version: noetic-devel
+
+- git:
+    local-name: robotiq
+    uri: https://github.com/ros-industrial/robotiq.git
+    version: noetic-devel
