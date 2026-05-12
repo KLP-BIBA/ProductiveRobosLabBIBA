@@ -28,7 +28,12 @@ RUN apt update && apt install -y \
     ros-noetic-universal-robots \
     ros-noetic-moveit \
     ros-noetic-trac-ik \
-    ros-noetic-trac-ik-kinematics-plugin 
+   os-noetic-trac-ik-kinematics-plugin \
+    libassimp-dev \
+    assimp-utils \
+    python3-pip
+
+RUN pip install --no-cache-dir pyassimp
 
 # Initialize workspace instead of merging
 RUN export WSTOOL_NONINTERACTIVE=1 && \
