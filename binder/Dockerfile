@@ -28,7 +28,7 @@ RUN apt update && apt install -y \
     ros-noetic-universal-robots \
     ros-noetic-moveit \
     ros-noetic-trac-ik \
-   os-noetic-trac-ik-kinematics-plugin \
+    ros-noetic-trac-ik-kinematics-plugin \
     libassimp-dev \
     assimp-utils \
     python3-pip
