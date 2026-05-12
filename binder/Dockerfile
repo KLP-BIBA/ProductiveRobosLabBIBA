@@ -24,12 +24,11 @@ RUN pip install --upgrade wstool
 RUN rm -rf /home/${NB_USER}/workspace/ros/src/* /home/${NB_USER}/workspace/ros/.rosinstall
 
 #KLP added 
-RUN apt install ros-noetic-ur-description
 RUN apt update && apt install -y \
     ros-noetic-universal-robots \
-    ros-noetic-moveit
-
-RUN apt-get update && apt-get install -y python3-pyassimp
+    ros-noetic-moveit \
+    ros-noetic-trac-ik \
+    ros-noetic-trac-ik-kinematics-plugin 
 
 # Initialize workspace instead of merging
 RUN export WSTOOL_NONINTERACTIVE=1 && \
