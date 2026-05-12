@@ -61,10 +61,7 @@
     uri: https://github.com/ros-industrial/universal_robot.git 
     version: noetic-devel
 
-- git:
-    local-name: industrial_core
-    uri: https://github.com/ros-industrial/industrial_core.git
-    version: noetic-devel
+ 
 
 - git:
     local-name: fanuc
@@ -76,7 +73,4 @@
     uri: https://github.com/ros-industrial/fanuc_moveit_config.git
     version: noetic-devel
 
-- git:
-    local-name: fanuc_resources
-    uri: https://github.com/ros-industrial/fanuc_resources.git
-    version: noetic-devel
+ 
