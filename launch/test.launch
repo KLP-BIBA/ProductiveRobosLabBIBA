@@ -11,7 +11,13 @@
 
 
    <!-- Joint sliders node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_gui" -->
-      <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />  
+   <!--      <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" /> -->
 
+
+  <include file="$(find ur5_moveit_config)/launch/demo.launch">
+
+     <!-- disable RViz -->
+     <arg name="use_rviz" value="false"/>
+  </include>
 
 </launch>
