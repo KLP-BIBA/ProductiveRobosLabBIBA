@@ -2,7 +2,7 @@
  
         <!-- Load UR5 URDF -->
         <param name="robot_description"
-               command="$(find xacro)/xacro $(find ur_description)/urdf/ur5.xacro"/>
+               command="$(find xacro)/xacro $(find ur_description)/urdf/ur10.xacro"/>
 
      
 
@@ -14,7 +14,7 @@
    <!--      <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" /> -->
 
 
-  <include file="$(find ur5_moveit_config)/launch/demo.launch">
+  <include file="$(find ur10_moveit_config)/launch/demo.launch">
 
      <!-- disable RViz -->
      <arg name="use_rviz" value="false"/>
