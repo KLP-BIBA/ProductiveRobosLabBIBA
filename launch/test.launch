@@ -16,8 +16,7 @@
    <!--      <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" /> -->
 
 
-  <include file="$(find $(arg ur_type)_moveit_config)/launch/demo.launch">
-
+    <include file="$(eval find(arg('ur_type') + '_moveit_config') + '/launch/demo.launch')">
      <!-- disable RViz -->
      <arg name="use_rviz" value="false"/>
   </include>
