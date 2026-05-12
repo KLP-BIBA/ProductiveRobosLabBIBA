@@ -7,7 +7,7 @@
      
 
         <!-- Publish TF -->
-        <node pkg="robot_state_publisher" type="robot_state_publisher" name="state_publisher"/>
+     <!--   <node pkg="robot_state_publisher" type="robot_state_publisher" name="state_publisher"/>-->
 
 
    <!-- Joint sliders node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_gui" -->
