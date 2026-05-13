@@ -17,6 +17,7 @@ WORKDIR ${ROS_WS}/src
 COPY --chown=${NB_USER}:users binder/me ${ROS_WS}/src/me
 #COPY --chown=${NB_USER}:users launch/mujoco_config ${ROS_WS}/src/me/config
 COPY --chown=${NB_USER}:users binder/noetic.rosinstall /home/${NB_USER}/noetic.rosinstall
+
 # Upgrade wstool in case version is too old
 RUN pip install --upgrade wstool
 
