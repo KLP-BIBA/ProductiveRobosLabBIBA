@@ -66,5 +66,9 @@
     uri: https://github.com/ros-industrial/industrial_core.git
     version: melodic-devel
 
- 
+ - git:
+    local-name: fanuc
+    uri: https://github.com/ros-industrial/fanuc.git
+    version: noetic-devel
+
  
