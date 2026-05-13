@@ -1,14 +1,22 @@
- <launch>
+<launch>
 
+    <!-- 1. URDF (YOU own this) -->
     <param name="robot_description"
            command="$(find xacro)/xacro $(find fanuc_r2000ib_support)/urdf/r2000ib210f.xacro" />
 
+    <!-- 2. TF -->
     <node name="robot_state_publisher"
           pkg="robot_state_publisher"
-          type="robot_state_publisher" />
+          type="robot_state_publisher"/>
 
     <node name="joint_state_publisher"
           pkg="joint_state_publisher"
-          type="joint_state_publisher" />
+          type="joint_state_publisher"/>
+
+    <!-- 3. MoveIt (NO robot_description inside MoveIt launch!) -->
+    <include file="$(find fanuc_r2000ib_moveit_config)/launch/move_group.launch">
+        <arg name="load_robot_description" value="false"/>
+    </include>
 
 </launch>
+
