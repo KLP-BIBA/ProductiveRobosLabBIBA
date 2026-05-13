@@ -33,6 +33,14 @@ RUN apt update && apt install -y \
     assimp-utils \
     python3-pip
 
+RUN apt update && apt install -y \
+    ros-noetic-fanuc \
+    ros-noetic-fanuc-moveit-config \
+    ros-noetic-fanuc-r2000ib-support \
+    ros-noetic-industrial-core \
+    ros-noetic-industrial-robot-client \
+    ros-noetic-industrial-robot-status-controller
+
 RUN pip install --no-cache-dir pyassimp
 
 # Initialize workspace instead of merging
