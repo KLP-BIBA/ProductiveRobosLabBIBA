@@ -1,0 +1,24 @@
+<launch>
+        <!-- Robot type -->
+        <arg name="ur_type" default="ur5"/>
+
+        <!-- Load UR5 URDF -->
+        <param name="robot_description"
+               command="$(find xacro)/xacro $(find ur_description)/urdf/$(arg ur_type).xacro"/>
+
+     
+
+        <!-- Publish TF -->
+     <!--   <node pkg="robot_state_publisher" type="robot_state_publisher" name="state_publisher"/>-->
+
+
+   <!-- Joint sliders node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_gui" -->
+   <!--      <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" /> -->
+
+
+    <include file="$(eval find(arg('ur_type') + '_moveit_config') + '/launch/demo.launch')">
+     <!-- disable RViz -->
+     <arg name="use_rviz" value="false"/>
+  </include>
+
+</launch>
