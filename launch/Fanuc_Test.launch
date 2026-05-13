@@ -1,24 +1,14 @@
-<launch>
-     
+ <launch>
 
-<launch>
-
-    <!-- 1. Load URDF FIRST (critical) -->
     <param name="robot_description"
-           command="$(find xacro)/xacro $(find fanuc_r2000ib_support)/urdf/r2000ib210f.urdf.xacro" />
+           command="$(find xacro)/xacro $(find fanuc_r2000ib_support)/urdf/r2000ib210f.xacro" />
 
-    <!-- 2. Joint states -->
-    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+    <node name="robot_state_publisher"
+          pkg="robot_state_publisher"
+          type="robot_state_publisher" />
 
-    <!-- 3. TF -->
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
-
-    <!-- 4. MoveIt (NO robot loading inside it) -->
-    <include file="$(find fanuc_r2000ib_moveit_config)/launch/move_group.launch"/>
-
-    <!-- 5. RViz -->
-    <!-- node name="rviz" pkg="rviz" type="rviz" output="screen"/ -->
-
-</launch>
+    <node name="joint_state_publisher"
+          pkg="joint_state_publisher"
+          type="joint_state_publisher" />
 
 </launch>
