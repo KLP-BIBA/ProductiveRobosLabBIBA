@@ -6,8 +6,8 @@ ENV ROS_WS=${HOME}/workspace/ros
 
 # Test von KLP jetzt auskommentiert
 USER root
-RUN apt install -y ros-noetic-pr2-gazebo \
-        ros-noetic-rqt
+#RUN apt install -y ros-noetic-pr2-gazebo \
+#        ros-noetic-rqt
 #RUN apt update && apt install -y ros-kinetic-pr2-gazebo
 
 # Initiate ROS workspace 
@@ -40,7 +40,8 @@ RUN apt update && apt install -y \
     ros-noetic-industrial-robot-status-controller
     
 RUN apt update && apt install -y \
-    ros-noetic-fanuc-m10ia-support
+    ros-noetic-fanuc-m10ia-support \
+    ros-noetic-fanuc-r2000ib-support
 
 RUN pip install --no-cache-dir pyassimp
 
