@@ -43,16 +43,11 @@ RUN apt update && apt install -y \
     ros-noetic-fanuc-lrmate200ib-support \
     ros-noetic-fanuc-r2000ib-support
 
-# Copy FANUC packages into your runtime workspace
-COPY workspace/ros/fanuc/moveit_cfgs/* /home/${NB_USER}/workspace/ros/src/
+# Optional: clone GitHub for latest MoveIt configs
+RUN git clone -b noetic-devel https://github.com/ros-industrial/fanuc.git /home/${NB_USER}/workspace/ros/src/fanuc
 
-# Build ROS workspace
+# Build workspace
 RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && cd /home/${NB_USER}/workspace/ros && catkin build"
-
-# Source workspace automatically
-RUN echo "source /home/${NB_USER}/workspace/ros/devel/setup.bash" >> /home/${NB_USER}/.bashrc
-
-
 
 
 RUN pip install --no-cache-dir pyassimp
