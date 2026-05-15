@@ -40,20 +40,24 @@ class Robots:
             raise ValueError("Parameter robot_name must to be not empty")
 
         urdf_file = Path(urdf_file)
-
+        print(f"file {urdf_file} is not xaxcro")
+        
         if not urdf_file.exists():
             raise ValueError(f"{urdf_file} does not exist")
 
+     
         # Handle XACRO
         if urdf_file.suffix == ".xacro":
-            tmp_urdf = Path(tempfile.gettempdir()) / f"{robot_name}.urdf"
-    
+            tmp_urdf = urdf_file.with_suffix(".urdf")
+
+            print("file is xaxcro")
             subprocess.run(
                 ["xacro", str(urdf_file), "-o", str(tmp_urdf)],
                 check=True
             )
-    
-            urdf_file = tmp_urdf
+
+            urdf_file = tmp_urdf 
+            print(f"file {urdf_file} is xaxcro")
     
         elif urdf_file.suffix != ".urdf":
             raise ValueError("File must be .urdf or .xacro")
