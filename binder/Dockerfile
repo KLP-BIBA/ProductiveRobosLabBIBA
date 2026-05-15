@@ -66,14 +66,15 @@ RUN wstool --version && which wstool
 # RUN pip install numpy
 #===========================================================#
 
+WORKDIR ${ROS_WS}/src
+COPY --chown=${NB_USER}:users myObjects ./myObjects
+
 RUN mkdir -p ${HOME}/work/src
 
 # Copy your source code before building (usually good practice)
 ENV REPO_DIR=${HOME}/work
 WORKDIR ${REPO_DIR}
 COPY --chown=${NB_USER}:users . ${REPO_DIR}/
-
-COPY --chown=${NB_USER}:users myObjects ./myObjects
 
 # Create the symbolic link for convenience
 RUN ln -s ${ROS_WS} ${PWD}/ROS_WS
