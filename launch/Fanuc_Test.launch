@@ -16,10 +16,10 @@
           pkg="joint_state_publisher"
           type="joint_state_publisher"/>
 
-    <!-- 3. MoveIt (NO robot_description inside MoveIt launch!) 
-    <include file="$(find fanuc_r2000ib_moveit_config)/launch/move_group.launch">
+    <!-- 3. MoveIt (NO robot_description inside MoveIt launch!) -->
+    <include file="$(find fanuc_lrmate200ib_moveit_config)/launch/demo.launch">
         <arg name="load_robot_description" value="false"/>
     </include>
--->
+
 </launch>
 
