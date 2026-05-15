@@ -43,6 +43,18 @@ RUN apt update && apt install -y \
     ros-noetic-fanuc-lrmate200ib-support \
     ros-noetic-fanuc-r2000ib-support
 
+# Copy FANUC packages into your runtime workspace
+COPY workspace/ros/fanuc/moveit_cfgs/* /home/${NB_USER}/workspace/ros/src/
+
+# Build ROS workspace
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && cd /home/${NB_USER}/workspace/ros && catkin build"
+
+# Source workspace automatically
+RUN echo "source /home/${NB_USER}/workspace/ros/devel/setup.bash" >> /home/${NB_USER}/.bashrc
+
+
+
+
 RUN pip install --no-cache-dir pyassimp
 
 # Initialize workspace instead of merging
