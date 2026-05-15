@@ -18,7 +18,7 @@
  -->
     <!-- 3. MoveIt (NO robot_description inside MoveIt launch!) -->
     <include file="$(find fanuc_lrmate200ib_moveit_config)/launch/demo.launch">
-        <arg name="load_robot_description" value="false"/>
+   <!--     <arg name="load_robot_description" value="false"/>  -->
     </include>
 
 </launch>
