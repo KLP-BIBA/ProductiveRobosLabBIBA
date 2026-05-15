@@ -5,7 +5,7 @@
            command="$(find xacro)/xacro $(find fanuc_r2000ib_support)/urdf/r2000ib210f.xacro" />
    -->
     <param name="robot_description"
-           command="$(find xacro)/xacro $(find fanuc_Irmate200ib_support)/urdf/r2000ib210f.xacro" />
+           command="$(find xacro)/xacro $(find fanuc_lrmate200ib_support)/urdf/lrmate200ib.xacro"
 
     <!-- 2. TF -->
     <node name="robot_state_publisher"
