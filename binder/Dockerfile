@@ -73,6 +73,8 @@ ENV REPO_DIR=${HOME}/work
 WORKDIR ${REPO_DIR}
 COPY --chown=${NB_USER}:users . ${REPO_DIR}/
 
+COPY --chown=${NB_USER}:users test/myObjects ./myObjects
+
 # Create the symbolic link for convenience
 RUN ln -s ${ROS_WS} ${PWD}/ROS_WS
 
