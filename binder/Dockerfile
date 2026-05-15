@@ -40,7 +40,7 @@ RUN apt update && apt install -y \
     ros-noetic-industrial-robot-status-controller
     
 RUN apt update && apt install -y \
-    ros-noetic-fanuc-m10ia-support \
+    ros-noetic-fanuc-Irmate200ib-support \
     ros-noetic-fanuc-r2000ib-support
 
 RUN pip install --no-cache-dir pyassimp
