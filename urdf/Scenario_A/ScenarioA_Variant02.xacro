@@ -28,6 +28,8 @@
       </geometry>
     </collision>
 
+      <xacro:include filename="../../meshes/testxacro/table.xacro"/>
+
   </link>
 
 </robot>
