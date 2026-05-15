@@ -3,7 +3,7 @@
     <!-- 1. URDF (YOU own this) 
     <param name="robot_description"
            command="$(find xacro)/xacro $(find fanuc_r2000ib_support)/urdf/r2000ib210f.xacro" />
-   -->
+  
     <param name="robot_description"
            command="$(find xacro)/xacro $(find fanuc_lrmate200ib_support)/urdf/lrmate200ib.xacro"
 
@@ -15,7 +15,7 @@
     <node name="joint_state_publisher"  
           pkg="joint_state_publisher"
           type="joint_state_publisher"/>
-
+ -->
     <!-- 3. MoveIt (NO robot_description inside MoveIt launch!) -->
     <include file="$(find fanuc_lrmate200ib_moveit_config)/launch/demo.launch">
         <arg name="load_robot_description" value="false"/>
