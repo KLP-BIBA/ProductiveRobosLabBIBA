@@ -1,8 +1,11 @@
 <launch>
 
-    <!-- 1. URDF (YOU own this) -->
+    <!-- 1. URDF (YOU own this) 
     <param name="robot_description"
            command="$(find xacro)/xacro $(find fanuc_r2000ib_support)/urdf/r2000ib210f.xacro" />
+   -->
+    <param name="robot_description"
+           command="$(find xacro)/xacro $(find fanuc_Irmate200ib_support)/urdf/r2000ib210f.xacro" />
 
     <!-- 2. TF -->
     <node name="robot_state_publisher"
