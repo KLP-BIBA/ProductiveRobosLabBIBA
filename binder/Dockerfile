@@ -67,8 +67,7 @@ RUN wstool --version && which wstool
 #===========================================================#
 
 WORKDIR ${ROS_WS}/src
-COPY --chown=${NB_USER}:users myObjects ./myObjects
-
+COPY --chown=${NB_USER}:users my_robot_description ./my_robot_description
 RUN mkdir -p ${HOME}/work/src
 
 # Copy your source code before building (usually good practice)
