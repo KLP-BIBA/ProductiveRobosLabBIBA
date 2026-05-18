@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot">
 
+  <!-- Base cylinder -->
+  <xacro:property name="link_radius" value="0.02"/>
+  <xacro:property name="link_length" value="3.0"/>
+  <xacro:property name="link_height_offset" value="0.5"/>
+
 
  <xacro:include filename="$(find ur_description)/urdf/inc/ur5_macro.xacro"/>
   <xacro:ur5_robot prefix="ur5_" />
 
-  <!-- Base cylinder -->
- <xacro:property name="link_radius" value="0.02"/>
-  <xacro:property name="link_length" value="3.0"/>
-  <xacro:property name="link_height_offset" value="0.5"/>
-
+ 
   <link name="base_link">
 
     <visual>
@@ -21,23 +22,7 @@
       <material name="green">
         <color rgba="1 0 0 1"/>
       </material>
-    </visual>
-
-    <collision>
-      <origin xyz="0 0 ${link_height_offset}" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="${link_radius}" length="${link_length}"/>
-      </geometry>
-    </collision>
-
-    <inertial>
-      <origin xyz="0 0 ${link_height_offset}" rpy="0 0 0"/>
-      <mass value="5.0"/>
-      <inertia ixx="0.1" ixy="0.0" ixz="0.0"
-               iyy="0.1" iyz="0.0"
-               izz="0.1"/>
-    </inertial>
-
+    </visual> 
   </link> 
 
  <joint name="base_to_table" type="fixed">
@@ -45,44 +30,5 @@
     <child link="ur5_base_link"/>
     <origin xyz="0 1 0.9" rpy="0 0 0"/>
   </joint>
-
-</robot>
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot">
-
-  <!-- Base cylinder -->
- <xacro:property name="link_radius" value="0.02"/>
-  <xacro:property name="link_length" value="3.0"/>
-  <xacro:property name="link_height_offset" value="0.5"/>
-
-  <link name="base_link">
-
-    <visual>
-      <origin xyz="0 0 ${link_height_offset}" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="${link_radius}" length="${link_length}"/>
-      </geometry>
-
-      <material name="green">
-        <color rgba="1 0 0 1"/>
-      </material>
-    </visual>
-
-    <collision>
-      <origin xyz="0 0 ${link_height_offset}" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="${link_radius}" length="${link_length}"/>
-      </geometry>
-    </collision>
-
-    <inertial>
-      <origin xyz="0 0 ${link_height_offset}" rpy="0 0 0"/>
-      <mass value="5.0"/>
-      <inertia ixx="0.1" ixy="0.0" ixz="0.0"
-               iyy="0.1" iyz="0.0"
-               izz="0.1"/>
-    </inertial>
-
-  </link> 
-
+  
 </robot>
