@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot">
 
-   <!-- include UR robot -->
-  <xacro:include filename="$(find ur_description)/urdf/ur5_robot.urdf.xacro"/>
+  <!-- Base cylinder -->
+ <xacro:property name="link_radius" value="0.02"/>
+  <xacro:property name="link_length" value="3.0"/>
+  <xacro:property name="link_height_offset" value="0.5"/>
 
-
- 
   <link name="base_link">
 
     <visual>
@@ -34,12 +34,6 @@
                izz="0.1"/>
     </inertial>
 
-  </link>
-
-  <joint name="table_to_ur5" type="fixed">
-    <parent link="base_link"/>
-    <child link="ur5_base_link"/>
-  </joint>
-
+  </link> 
 
 </robot>
