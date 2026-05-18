@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>my_robot_description</name>
+  <version>0.0.0</version>
+  <description>Robot description package</description>
+
+  <maintainer email="you@example.com">you</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>xacro</exec_depend>
+
+</package>
