@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot"> 
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot">
+
+   <!-- include UR robot -->
+  <xacro:include filename="$(find ur_description)/urdf/ur5_robot.urdf.xacro"/>
 
 
-
- <!-- Base link -->
+ 
   <link name="base_link">
 
     <visual>
@@ -13,56 +15,31 @@
       </geometry>
 
       <material name="green">
-        <color rgba="0 1 0 1"/>
-      </material>
-    </visual> 
-  </link>
- 
-  <!-- Table dimensions -->
-  <xacro:property name="table_length" value="1.2"/>
-  <xacro:property name="table_width" value="0.8"/>
-  <xacro:property name="table_height" value="0.75"/>
-  <xacro:property name="table_thickness" value="0.05"/>
-
-  <!-- Main table link -->
-  <link name="table_link">
-
-    <visual>
-      <geometry>
-        <box size="${table_length} ${table_width} ${table_thickness}"/>
-      </geometry>
-      <origin xyz="0 1 ${table_height}" rpy="0 0 0"/>
-      <material name="brown">
-        <color rgba="0 0 1 1"/>
+        <color rgba="1 0 0 1"/>
       </material>
     </visual>
 
     <collision>
+      <origin xyz="0 0 ${link_height_offset}" rpy="0 0 0"/>
       <geometry>
-        <box size="${table_length} ${table_width} ${table_thickness}"/>
+        <cylinder radius="${link_radius}" length="${link_length}"/>
       </geometry>
-      <origin xyz="0 1 ${table_height}" rpy="0 0 0"/>
     </collision>
 
     <inertial>
-      <origin xyz="0 0 ${table_height}" rpy="0 0 0"/>
-      <mass value="20.0"/>
-      <inertia
-        ixx="1.0" ixy="0.0" ixz="0.0"
-        iyy="1.0" iyz="0.0"
-        izz="1.0"/>
+      <origin xyz="0 0 ${link_height_offset}" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0"
+               iyy="0.1" iyz="0.0"
+               izz="0.1"/>
     </inertial>
 
   </link>
 
-  
-  <!-- connect UR base to bench -->
-  <joint name="base_to_table" type="fixed">
+  <joint name="table_to_ur5" type="fixed">
     <parent link="base_link"/>
-    <child link="table_link"/>
-    <origin xyz="1 0 0" rpy="0 0 0"/>
-  </joint> 
- 
+    <child link="ur5_base_link"/>
+  </joint>
 
 
 </robot>
