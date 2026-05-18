@@ -10,6 +10,9 @@
  <xacro:include filename="$(find ur_description)/urdf/inc/ur5_macro.xacro"/>
   <xacro:ur5_robot prefix="ur5_" />
 
+<xacro:include filename="$(find my_robot_description)/urdf/table.xacro"/>
+
+<xacro:wood_table name="bench" parent="base_link" x="1" y="0" z="0"/>
  
   <link name="base_link">
 
