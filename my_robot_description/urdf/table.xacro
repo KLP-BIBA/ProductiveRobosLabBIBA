@@ -1,36 +1,26 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="wood_table">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="table">
 
-  <!-- ========== TABLE MACRO ========== -->
-  <xacro:macro name="wood_table" params="name parent x y z">
+  <link name="table_link">
 
-    <!-- Table base link -->
-    <link name="${name}_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot_description/meshes/WoodPlate_Bench_700x1500x900.stl"/>
+      </geometry>
 
-      <visual>
-        <geometry>
-          <mesh filename="package://my_robot_description/meshes/stl/WoodPlate_Bench_700x1500x900.stl"/>
-        </geometry>
-      </visual>
+      <material name="gray">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
 
-      <collision>
-        <geometry>
-          <mesh filename="package://my_robot_description/meshes/stl/WoodPlate_Bench_700x1500x900.stl"/>
-        </geometry>
-      </collision>
+    <collision>
+      <geometry>
+        <box size="1.5 0.7 0.05"/>
+      </geometry>
+    </collision>
 
-     
-    </link>
+  </link>
 
-    <!-- Fixed joint to world or parent -->
-    <joint name="${name}_joint" type="fixed">
-      <parent link="${parent}"/>
-      <child link="${name}_link"/>
-
-      <!-- Position of table in world -->
-      <origin xyz="${x} ${y} ${z}" rpy="0 0 0"/>
-    </joint>
-
-  </xacro:macro>
+  
 
 </robot>
