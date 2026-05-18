@@ -66,6 +66,7 @@ RUN wstool --version && which wstool
 # RUN pip install numpy
 #===========================================================#
 
+#KLP added
 WORKDIR ${ROS_WS}/src
 COPY --chown=${NB_USER}:users my_robot_description ./my_robot_description
 RUN mkdir -p ${HOME}/work/src
@@ -84,6 +85,9 @@ RUN ln -s ${ROS_WS} ${PWD}/ROS_WS
 WORKDIR ${ROS_WS}
 RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin build"
 
+# KLP added
+RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc && \
+    echo "source /home/jovyan/workspace/ros/devel/setup.bash" >> ~/.bashrc
 
 # The entrypoint of the docker image
 COPY --chown=${NB_USER}:users binder/webapps.json ${ROS_WS}/src/rvizweb/webapps/app.json
