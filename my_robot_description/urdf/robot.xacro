@@ -1,6 +1,23 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot"> 
 
+
+
+ <!-- Base link -->
+  <link name="base_link">
+
+    <visual>
+      <origin xyz="0 0 ${link_height_offset}" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="${link_radius}" length="${link_length}"/>
+      </geometry>
+
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual> 
+  </link>
+ 
   <!-- Table dimensions -->
   <xacro:property name="table_length" value="1.2"/>
   <xacro:property name="table_width" value="0.8"/>
@@ -37,5 +54,15 @@
     </inertial>
 
   </link>
+
+  
+  <!-- connect UR base to bench -->
+  <joint name="base_to_table" type="fixed">
+    <parent link="base_link"/>
+    <child link="table_link"/>
+    <origin xyz="1 0 0" rpy="0 0 0"/>
+  </joint> 
+ 
+
 
 </robot>
