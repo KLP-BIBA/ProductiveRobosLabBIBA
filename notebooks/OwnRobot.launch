@@ -1,0 +1,15 @@
+<launch>
+
+    <!-- Load robot description -->
+    <param name="robot_description"
+           command="$(find xacro)/xacro $(find my_robot_description)/urdf/my_robot.xacro" />
+
+    <!-- Publish TF -->
+    <node pkg="robot_state_publisher"
+          type="robot_state_publisher"
+          name="robot_state_publisher" />
+
+    
+  
+
+</launch>
