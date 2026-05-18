@@ -3,7 +3,7 @@
 
   <!-- Base cylinder -->
   <xacro:property name="link_radius" value="0.02"/>
-  <xacro:property name="link_length" value="3.0"/>
+  <xacro:property name="link_length" value="1.0"/>
   <xacro:property name="link_height_offset" value="0.5"/>
 
 
@@ -11,8 +11,6 @@
   <xacro:ur5_robot prefix="ur5_" />
 
 <xacro:include filename="$(find my_robot_description)/urdf/table.xacro"/>
-
-<xacro:wood_table name="bench" parent="base_link" x="1" y="0" z="0"/>
  
   <link name="base_link">
 
@@ -28,10 +26,18 @@
     </visual> 
   </link> 
 
- <joint name="base_to_table" type="fixed">
+
+  <joint name="table_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="ur5_base_link"/>
+    <child link="table_link"/>
+
     <origin xyz="0 1 0.9" rpy="0 0 0"/>
   </joint>
-  
+ 
+ <joint name="base_to_table" type="fixed">
+    <parent link="table_link"/>
+    <child link="ur5_base_link"/>
+    <origin xyz="0.2 0.2 0" rpy="0 0 0"/>
+  </joint>
+
 </robot>
