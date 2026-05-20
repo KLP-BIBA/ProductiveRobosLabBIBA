@@ -1,0 +1,83 @@
+<launch>
+
+  <!-- ========================================================= -->
+  <!-- ROBOT DESCRIPTION CONFIGURATION -->
+  <!-- ========================================================= -->
+
+  <!--
+    We allow external control over whether this launch file loads the URDF.
+    In integrated systems (robot + MoveIt + driver), URDF is often loaded elsewhere.
+  -->
+  <arg name="load_robot_description" default="false"/>
+
+  <!--
+    Name of the ROS parameter where URDF is stored.
+    Keep default unless you run multiple robots in same ROS namespace.
+  -->
+  <arg name="robot_description" default="robot_description"/>
+
+  <!-- ========================================================= -->
+  <!-- URDF LOADING (CUSTOMIZED FOR YOUR ROBOT) -->
+  <!-- ========================================================= -->
+
+  <!--
+    IMPORTANT CHANGE:
+    ❌ Removed direct dependency on ur_description/ur5.xacro
+    ✔ Now loads YOUR robot description package
+
+    Reason:
+    - You embed UR inside a custom robot
+    - You use prefixes (ur5_)
+    - Stock UR description would break SRDF consistency
+  -->
+  <param if="$(arg load_robot_description)"
+         name="$(arg robot_description)"
+         command="$(find xacro)/xacro
+                  '$(find my_robot_description)/urdf/my_robot.urdf.xacro'" />
+
+  <!-- ========================================================= -->
+  <!-- SRDF (SEMANTIC ROBOT DESCRIPTION) -->
+  <!-- ========================================================= -->
+
+  <!--
+    IMPORTANT CHANGE:
+    ❌ Removed static ur5.srdf
+    ✔ Switched to xacro-based SRDF for prefix support
+
+    Why:
+    - Your robot uses prefixes (ur5_)
+    - SRDF must match URDF exactly
+    - static SRDF causes your earlier crash (manipulator group empty)
+  -->
+  <param name="$(arg robot_description)_semantic"
+         command="$(find xacro)/xacro
+                  '$(find my_robot_moveit_config)/config/my_robot.srdf.xacro'
+                  prefix:=ur5_" />
+
+  <!-- ========================================================= -->
+  <!-- JOINT LIMITS -->
+  <!-- ========================================================= -->
+
+  <!--
+    These override URDF limits if needed.
+    Keep this identical in structure; no prefix needed here.
+  -->
+  <group ns="$(arg robot_description)_planning">
+    <rosparam command="load"
+              file="$(find my_robot_moveit_config)/config/joint_limits.yaml"/>
+  </group>
+
+  <!-- ========================================================= -->
+  <!-- KINEMATICS CONFIGURATION -->
+  <!-- ========================================================= -->
+
+  <!--
+    Kinematics plugin configuration (IK solvers etc.)
+    Must match group names defined in SRDF (e.g. "manipulator")
+  -->
+  <group ns="$(arg robot_description)_kinematics">
+    <rosparam command="load"
+              file="$(find my_robot_moveit_config)/config/kinematics.yaml"/>
+  </group>
+
+</launch>
