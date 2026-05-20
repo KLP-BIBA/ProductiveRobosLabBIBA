@@ -67,7 +67,7 @@ RUN wstool --version && which wstool
 #===========================================================#
 
 #KLP added
-WORKDIR ${ROS_WS}/src
+# WORKDIR ${ROS_WS}/src
 COPY --chown=${NB_USER}:users my_robot_description ./my_robot_description
 # RUN mkdir -p ${HOME}/work/src
 
