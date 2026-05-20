@@ -20,6 +20,7 @@
     <include file="$(eval find(arg('ur_type') + '_moveit_config') + '/launch/demo.launch')">
      <!-- disable RViz -->
      <arg name="use_rviz" value="false"/>
+     <arg name="load_robot_description" value="false"/>
   </include>
 
 </launch>
