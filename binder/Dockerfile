@@ -69,7 +69,7 @@ RUN wstool --version && which wstool
 #KLP added
 WORKDIR ${ROS_WS}/src
 COPY --chown=${NB_USER}:users my_robot_description ./my_robot_description
-RUN mkdir -p ${HOME}/work/src
+# RUN mkdir -p ${HOME}/work/src
 
 # Copy your source code before building (usually good practice)
 ENV REPO_DIR=${HOME}/work
