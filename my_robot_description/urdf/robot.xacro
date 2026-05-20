@@ -12,7 +12,7 @@
 
 <xacro:include filename="$(find my_robot_description)/urdf/table.xacro"/>
  
-  <link name="world">
+  <link name="test">
 
     <visual>
       <origin xyz="0 0 ${link_height_offset}" rpy="0 0 0"/>
@@ -28,15 +28,15 @@
 
 
   <joint name="table_joint" type="fixed">
-    <parent link="world"/>
+    <parent link="base_link"/>
     <child link="table_link"/>
 
     <origin xyz="0 1 0.9" rpy="0 0 0"/>
   </joint>
  
  <joint name="base_to_table" type="fixed">
-    <parent link="world"/>
-    <child link="base_link"/>
+    <parent link="base_link"/>
+    <child link="test"/>
     <origin xyz="0.2 1.2 0" rpy="0 0 0"/>
   </joint>
 
