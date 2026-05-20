@@ -1,10 +1,7 @@
 <launch>
 
-  <!-- ========================================================= -->
-  <!-- ROBOT DESCRIPTION CONFIGURATION -->
-  <!-- ========================================================= -->
-
-  <!--
+ 
+  <!-- ROBOT DESCRIPTION CONFIGURATION  
     We allow external control over whether this launch file loads the URDF.
     In integrated systems (robot + MoveIt + driver), URDF is often loaded elsewhere.
   -->
@@ -17,13 +14,11 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- ========================================================= -->
-  <!-- URDF LOADING (CUSTOMIZED FOR YOUR ROBOT) -->
-  <!-- ========================================================= -->
-
+  <!-- URDF LOADING (CUSTOMIZED FOR YOUR ROBOT) --> 
   <!--
     IMPORTANT CHANGE:
-    ❌ Removed direct dependency on ur_description/ur5.xacro
-    ✔ Now loads YOUR robot description package
+   Removed direct dependency on ur_description/ur5.xacro
+    Now loads YOUR robot description package
 
     Reason:
     - You embed UR inside a custom robot
@@ -36,13 +31,11 @@
                   '$(find my_robot_description)/urdf/my_robot.urdf.xacro'" />
 
   <!-- ========================================================= -->
-  <!-- SRDF (SEMANTIC ROBOT DESCRIPTION) -->
-  <!-- ========================================================= -->
-
+  <!-- SRDF (SEMANTIC ROBOT DESCRIPTION) --> 
   <!--
     IMPORTANT CHANGE:
-    ❌ Removed static ur5.srdf
-    ✔ Switched to xacro-based SRDF for prefix support
+      Removed static ur5.srdf
+      Switched to xacro-based SRDF for prefix support
 
     Why:
     - Your robot uses prefixes (ur5_)
