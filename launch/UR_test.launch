@@ -2,11 +2,12 @@
         <!-- Robot type -->
         <arg name="ur_type" default="ur5"/>
 
-        <!-- Load UR5 URDF -->
+        <!-- Load UR5 URDF
         <param name="robot_description"
                command="$(find xacro)/xacro $(find ur_description)/urdf/$(arg ur_type).xacro"/>
-
-     
+ -->
+     <param name="robot_description"
+           command="$(find xacro)/xacro $(find my_robot_description)/urdf/robot.xacro" />
 
         <!-- Publish TF -->
      <!--   <node pkg="robot_state_publisher" type="robot_state_publisher" name="state_publisher"/>-->
