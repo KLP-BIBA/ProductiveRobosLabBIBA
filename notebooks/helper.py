@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, TypedDict
 import ipywidgets as widgets
+from ipywidgets import Button, Layout
 import subprocess
 import tempfile
 
@@ -162,3 +163,71 @@ class Launcher:
 
     def get_process_name(self) -> str | None:
         return self.process_name
+
+
+class Launcher2:
+    COMMAND_TEMPLATE = "roslaunch {launch_file}{args}"
+
+    def __init__(self, launch_file: Path | str):
+        launch_file = check_file(
+            file=launch_file,
+            ending=".launch",
+            parameter_name="launch_file"
+        )
+
+        self.launch_file = launch_file
+        self.open_process: subprocess.Popen | None = None
+        self.process_name: str | None = None
+
+    def _build_command(self, urdf_file: Path | str | None): 
+        return self.COMMAND_TEMPLATE.format(
+            launch_file=self.launch_file,
+            args=""
+        )
+
+    def launch(
+        self,
+        rvizweb,
+        process_name: str | None = None,
+        ferr=None,
+        fout=None,
+    ):
+        # stop previous process
+        if self.open_process:
+            self.open_process.kill()
+
+        cmd = self._build_command(None)
+
+        self.open_process = subprocess.Popen(
+            ["/bin/bash", "-c", cmd],
+            stdout=fout if fout else subprocess.DEVNULL,
+            stderr=ferr if ferr else subprocess.DEVNULL,
+            shell=False,
+        )
+
+        self.process_name = process_name or "Unknown"
+        rvizweb.open()
+
+    def kill(self):
+        if self.open_process:
+            self.open_process.kill()
+        self.open_process = None
+        self.process_name = None
+
+    def get_process_name(self) -> str | None:
+        return self.process_name
+
+
+
+def create_button(name, launch_path,rviz_web): 
+    btn = Button(
+        description=name,
+        layout=Layout(width='auto', height='50px'),
+        style={'font_size':'1rem'},
+        tooltip=f"Launch: {name}"
+    )
+    def launch_robot():
+            launcher = Launcher2(launch_path)
+            launcher.launch(rvizweb=rviz_web) 
+    btn.on_click(lambda b: launch_robot())
+    return btn
