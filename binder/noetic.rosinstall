@@ -76,7 +76,6 @@
 #   uri: https://github.com/ros-industrial/robotiq.git
 #    version: master
 
-- git:
+ - git:
     local-name: onrobot_ros
     uri: https://github.com/inria-paris-robotics-lab/onrobot_ros.git
-    version: master
