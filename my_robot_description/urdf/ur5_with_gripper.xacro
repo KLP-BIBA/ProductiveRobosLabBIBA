@@ -23,7 +23,14 @@
   </joint>
 
   <!-- Left finger -->
-  <link name="finger_left_link"/>
+<link name="finger_left_link">
+  <visual>
+    <geometry>
+      <box size="0.02 0.01 0.08"/>
+    </geometry>
+    <material name="blue"/>
+  </visual>
+</link> 
   <joint name="finger_left_joint" type="prismatic">
     <parent link="gripper_base_link"/>
     <child link="finger_left_link"/>
@@ -32,7 +39,14 @@
   </joint>
 
   <!-- Right finger -->
-  <link name="finger_right_link"/>
+  <link name="finger_right_link">
+  <visual>
+    <geometry>
+      <box size="0.02 0.01 0.08"/>
+    </geometry>
+    <material name="red"/>
+  </visual>
+</link>
   <joint name="finger_right_joint" type="prismatic">
     <parent link="gripper_base_link"/>
     <child link="finger_right_link"/>
