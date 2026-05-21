@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur5_with_gripper">
+
+  <!-- ===================== -->
+  <!-- UR5 BASE ROBOT        -->
+  <!-- ===================== -->
+
+  <xacro:include filename="$(find ur_description)/urdf/inc/ur5_macro.xacro"/>
+
+  <xacro:ur5_robot prefix="" />
+
+  <!-- ===================== -->
+  <!-- GRIPPER ADDITION      -->
+  <!-- ===================== -->
+
+  <!-- Gripper base attached to tool0 -->
+  <link name="gripper_base_link"/>
+
+  <joint name="tool0_to_gripper" type="fixed">
+    <parent link="tool0"/>
+    <child link="gripper_base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Left finger -->
+  <link name="finger_left_link"/>
+  <joint name="finger_left_joint" type="prismatic">
+    <parent link="gripper_base_link"/>
+    <child link="finger_left_link"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="10" velocity="0.1" lower="0.0" upper="0.04"/>
+  </joint>
+
+  <!-- Right finger -->
+  <link name="finger_right_link"/>
+  <joint name="finger_right_joint" type="prismatic">
+    <parent link="gripper_base_link"/>
+    <child link="finger_right_link"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="10" velocity="0.1" lower="0.0" upper="0.04"/>
+  </joint>
+
+</robot>
