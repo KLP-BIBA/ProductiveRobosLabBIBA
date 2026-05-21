@@ -45,7 +45,7 @@
       <box size="0.02 0.01 0.08"/>
     </geometry>
     <material name="rightFinger" >
-    <color rgba ="0.5020 0.0000 0.5020 1"/>
+    <color rgba ="1 0 0 1"/>
     </material>
 
   </visual>
