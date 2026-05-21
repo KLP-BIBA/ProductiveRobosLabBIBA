@@ -74,4 +74,4 @@
 - git:
     local-name: robotiq
     uri: https://github.com/ros-industrial/robotiq.git
-    version: noetic-devel 
+    version: master
