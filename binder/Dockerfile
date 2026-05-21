@@ -12,7 +12,7 @@ USER root
 WORKDIR ${ROS_WS}/src
 # A Workaround for fixing the issue of RvizWeb loading meshes with "file:///" path instead of "package:///".
 COPY --chown=${NB_USER}:users binder/me ${ROS_WS}/src/me
-#COPY --chown=${NB_USER}:users launch/mujoco_config ${ROS_WS}/src/me/config
+ 
 COPY --chown=${NB_USER}:users binder/noetic.rosinstall /home/${NB_USER}/noetic.rosinstall
 
 # Upgrade wstool in case version is too old
@@ -20,8 +20,7 @@ RUN pip install --upgrade wstool
 
 # Remove src and .rosinstall to start fresh
 RUN rm -rf /home/${NB_USER}/workspace/ros/src/* 
-
-#/home/${NB_USER}/workspace/ros/.rosinstall
+ 
 
 #KLP added 
 RUN apt update && apt install -y \
