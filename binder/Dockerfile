@@ -4,12 +4,9 @@ FROM intel4coro/base-notebook:20.04-noetic-vnc
 # Path to the default ROS workspace
 ENV ROS_WS=${HOME}/workspace/ros
 
-# Test von KLP jetzt auskommentiert
- USER root
-#RUN apt install -y ros-noetic-pr2-gazebo \
-#        ros-noetic-rqt
-#RUN apt update && apt install -y ros-kinetic-pr2-gazebo
 
+USER root
+ 
 # Initiate ROS workspace 
 
 WORKDIR ${ROS_WS}/src
@@ -71,7 +68,7 @@ RUN wstool --version && which wstool
 #KLP added
 # WORKDIR ${ROS_WS}/src
 COPY --chown=${NB_USER}:users my_robot_description ./my_robot_description
-# RUN mkdir -p ${HOME}/work/src
+ 
 
 # Copy your source code before building (usually good practice)
 ENV REPO_DIR=${HOME}/work
