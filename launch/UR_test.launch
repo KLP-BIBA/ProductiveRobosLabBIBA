@@ -7,7 +7,7 @@
                command="$(find xacro)/xacro $(find ur_description)/urdf/$(arg ur_type).xacro"/>
  -->
      <param name="robot_description"
-           command="$(find xacro)/xacro $(find my_robot_description)/urdf/robot.xacro" />
+           command="$(find xacro)/xacro $(find my_robot_description)/urdf/ur5_with_gripper.xacro" />
 
         <!-- Publish TF -->
      <!--   <node pkg="robot_state_publisher" type="robot_state_publisher" name="state_publisher"/>-->
