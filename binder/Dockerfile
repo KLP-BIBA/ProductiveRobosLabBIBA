@@ -22,7 +22,9 @@ COPY --chown=${NB_USER}:users binder/noetic.rosinstall /home/${NB_USER}/noetic.r
 RUN pip install --upgrade wstool
 
 # Remove src and .rosinstall to start fresh
-RUN rm -rf /home/${NB_USER}/workspace/ros/src/* /home/${NB_USER}/workspace/ros/.rosinstall
+RUN rm -rf /home/${NB_USER}/workspace/ros/src/* 
+
+#/home/${NB_USER}/workspace/ros/.rosinstall
 
 #KLP added 
 RUN apt update && apt install -y \
