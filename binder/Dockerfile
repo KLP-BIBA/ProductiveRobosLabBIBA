@@ -4,7 +4,6 @@ FROM intel4coro/base-notebook:20.04-noetic-vnc
 # Path to the default ROS workspace
 ENV ROS_WS=${HOME}/workspace/ros
 
-
 USER root
  
 # Initiate ROS workspace 
