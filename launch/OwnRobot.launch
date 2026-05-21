@@ -2,7 +2,7 @@
 
     <!-- Load robot description -->
     <param name="robot_description"
-           command="$(find xacro)/xacro $(find my_robot_description)/urdf/ur5_with_gripper.xacro" />
+           command="$(find xacro)/xacro $(find my_robot_description)/urdf/robot.xacro" />
 
     <!-- Publish TF -->
     <node pkg="robot_state_publisher"
