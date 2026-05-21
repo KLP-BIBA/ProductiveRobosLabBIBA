@@ -28,7 +28,9 @@
     <geometry>
       <box size="0.02 0.01 0.08"/>
     </geometry>
-    <material name="blue"/>
+    <material name="leftFinger" >
+    <color rgba ="1 0 0 1"/>
+    </material>
   </visual>
 </link> 
   <joint name="finger_left_joint" type="prismatic">
