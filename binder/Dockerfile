@@ -42,6 +42,7 @@ RUN apt update && apt install -y \
 
 # Optional: clone GitHub for latest MoveIt configs
 RUN git clone -b noetic-devel https://github.com/ros-industrial/fanuc.git /home/${NB_USER}/workspace/ros/src/fanuc
+RUN git clone https://github.com/UOsaka-Harada-Laboratory/onrobot.git --depth 1 /home/${NB_USER}/workspace/ros/src/onrobot
 
 # Build workspace
 RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && cd /home/${NB_USER}/workspace/ros && catkin build"
