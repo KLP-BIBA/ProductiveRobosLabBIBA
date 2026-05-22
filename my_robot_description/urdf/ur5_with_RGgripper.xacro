@@ -3,24 +3,24 @@
 
   <!-- ===================== -->
   <!-- UR5 BASE ROBOT        -->
-  <!-- ===================== 
+  <!-- ===================== -->
 
   <xacro:include filename="$(find ur_description)/urdf/inc/ur5_macro.xacro"/>
 
   <xacro:ur5_robot prefix="" />
--->
+
   <!-- ===================== -->
   <!-- GRIPPER ADDITION      -->
   <!-- ===================== -->
   <xacro:include filename="$(find onrobot_rg_description)/urdf/onrobot_rg2_model_macro.xacro"/>
   <xacro:onrobot_rg2 prefix=""/>
 
-  <!-- attach gripper 
+  <!-- attach gripper -->
   <joint name="rg2_joint" type="fixed">
     <parent link="tool0"/>
-    <child link="onrobot_rg2_base_link"/>
+    <child link="world"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
- -->
+ 
 
 </robot>
