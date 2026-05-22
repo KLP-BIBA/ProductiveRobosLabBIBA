@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur5_with_gripper">
+
+  <!-- ===================== -->
+  <!-- UR5 BASE ROBOT        -->
+  <!-- ===================== -->
+
+  <xacro:include filename="$(find ur_description)/urdf/inc/ur5_macro.xacro"/>
+
+  <xacro:ur5_robot prefix="" />
+
+
+  <!-- ===================== -->
+  <!-- GRIPPER ADDITION      -->
+  <!-- ===================== -->
+ 
+  <xacro:include filename="$(find my_robot_description)/urdf/MyFingerGrip.xacro"/>
+
+  <!-- Attach gripper to tool0  this is default name of rosindustrial UR connection link --> 
+  <xacro:MyFingerGrip parent="tool0"/>
+
+</robot>
