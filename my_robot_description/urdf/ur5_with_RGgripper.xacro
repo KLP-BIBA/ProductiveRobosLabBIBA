@@ -14,7 +14,7 @@
   <!-- GRIPPER ADDITION      -->
   <!-- ===================== -->
  <xacro:include filename="$(find onrobot_rg_description)/urdf/onrobot_rg2.xacro" />
-  <xacro:onrobot_rg2 prefix="rg2_"/>
+  <xacro:onrobot_rg2 prefix=""/>
 
   <!-- Attach gripper to tool0  this is default name of rosindustrial UR connection link --> 
 
