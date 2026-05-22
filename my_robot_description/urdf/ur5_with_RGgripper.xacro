@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur5_with_gripper">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur5_with_RGgripper">
 
   <!-- ===================== -->
   <!-- UR5 BASE ROBOT        -->
@@ -13,18 +13,16 @@
   <!-- ===================== -->
   <!-- GRIPPER ADDITION      -->
   <!-- ===================== -->
- <xacro:include filename="$(find onrobot_rg_description)/urdf/onrobot_rg2_model_macro.xacro" />
-  <xacro:onrobot_rg2 prefix=""/>
+ <xacro:include filename="$(find onrobot_rg_description)/urdf/onrobot_rg2.xacro" />
+  <xacro:onrobot_rg2 prefix="rg2_"/>
 
   <!-- Attach gripper to tool0  this is default name of rosindustrial UR connection link --> 
 
-
-   <joint name="tool0_to_gripper" type="fixed">
-      <parent link="tool0"/>
-      <child link="onrobot_rg2_base_link"/>
-      <origin xyz="0 0 0.1" rpy="0 0 0"/>
-    </joint> 
-
+<joint name="tool0_to_rg2" type="fixed">
+  <parent link="tool0"/>
+  <child link="rg2_onrobot_rg2_base_link"/>
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+</joint>
  
 
 </robot>
