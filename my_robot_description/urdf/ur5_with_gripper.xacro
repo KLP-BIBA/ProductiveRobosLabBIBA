@@ -5,19 +5,44 @@
   <!-- UR5 BASE ROBOT        -->
   <!-- ===================== -->
 
-  <xacro:include filename="$(find my_robot_description)/urdf/inc/ur5_macro.xacro"/>
+  <xacro:include filename="$(find ur_description)/urdf/inc/ur5_macro.xacro"/>
 
   <xacro:ur5_robot prefix="" />
+
+  <!-- ===================== -->
+  <!-- GRIPPER ADDITION      -->
+  <!-- ===================== -->
+
+  <!-- Gripper base attached to tool0 -->
+  <link name="1gripper_base_link">
+  <visual>
+    <geometry>
+      <box size="0.05 0.05 0.05"/>
+    </geometry>
+    <material name="gripperbase" >
+    <color rgba ="1 0 1 1"/>
+    </material>
+  </visual>
+</link> 
+
+  <joint name="tool0_to_gripper" type="fixed">
+    <parent link="tool0"/>
+    <child link="1gripper_base_link"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+  </joint>
 
 
  <!-- ===================== -->
   <!-- INCLUDE GRIPPER       -->
   <!-- ===================== -->
+ 
+  <xacro:include filename="$(find my_robot_description)/urdf/MyFingerGrip.xacro"/>
 
-  <xacro:include filename="$(find your_package)/urdf/MyFingerGrip.xacro"/>
-
-  <!-- Attach gripper to tool0 -->
+  <!-- Attach gripper to tool0 --> 
 
   <xacro:MyFingerGrip parent="tool0"/>
+
+
+
 
 </robot>
