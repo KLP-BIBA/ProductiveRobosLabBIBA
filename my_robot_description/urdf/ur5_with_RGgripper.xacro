@@ -20,7 +20,7 @@
 
 <joint name="tool0_to_rg2" type="fixed">
   <parent link="tool0"/>
-  <child link="rg2_onrobot_rg2_base_link"/>
+  <child link="world"/>
   <origin xyz="0 0 0" rpy="0 0 0"/>
 </joint>
  
