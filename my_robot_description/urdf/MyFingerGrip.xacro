@@ -2,12 +2,10 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="simple_gripper" params="parent">
+  <xacro:macro name="MyFingerGrip" params="parent">
 
-    <!-- ===================== -->
-    <!-- GRIPPER BASE          -->
-    <!-- ===================== -->
-
+     <!-- GRIPPER BASE          -->
+ 
     <link name="gripper_base_link">
       <visual>
         <geometry>
@@ -23,17 +21,14 @@
     <joint name="tool0_to_gripper" type="fixed">
       <parent link="${parent}"/>
       <child link="gripper_base_link"/>
-
       <origin xyz="0 0 0.1" rpy="0 0 0"/>
-    </joint>
+    </joint> 
 
-
-    <!-- ===================== -->
     <!-- LEFT FINGER           -->
-    <!-- ===================== -->
-
+ 
     <link name="finger_left_link">
       <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <box size="0.05 0.05 0.1"/>
         </geometry>
@@ -47,24 +42,16 @@
     <joint name="finger_left_joint" type="prismatic">
       <parent link="gripper_base_link"/>
       <child link="finger_left_link"/>
-
       <origin xyz="0 0.05 0.1" rpy="0 0 0"/>
-
       <axis xyz="1 0 0"/>
+      <limit lower="0.0" upper="0.04" effort="10" velocity="0.1"/>
+    </joint> 
 
-      <limit lower="0.0"
-             upper="0.04"
-             effort="10"
-             velocity="0.1"/>
-    </joint>
-
-
-    <!-- ===================== -->
     <!-- RIGHT FINGER          -->
-    <!-- ===================== -->
 
     <link name="finger_right_link">
       <visual>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <box size="0.05 0.05 0.1"/>
         </geometry>
@@ -78,15 +65,9 @@
     <joint name="finger_right_joint" type="prismatic">
       <parent link="gripper_base_link"/>
       <child link="finger_right_link"/>
-
       <origin xyz="0 -0.05 0.1" rpy="0 0 0"/>
-
       <axis xyz="-1 0 0"/>
-
-      <limit lower="0.0"
-             upper="0.04"
-             effort="10"
-             velocity="0.1"/>
+      <limit lower="0.0" upper="0.04" effort="10" velocity="0.1"/>
     </joint>
 
   </xacro:macro>
