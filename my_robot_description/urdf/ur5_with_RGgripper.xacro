@@ -18,7 +18,7 @@
   <!-- attach gripper -->
   <joint name="rg2_joint" type="fixed">
     <parent link="tool0"/>
-    <child link="world"/>
+    <child link="onrobot_rg2_base_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
  
