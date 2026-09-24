@@ -11,7 +11,8 @@
   <xacro:ur5_robot prefix="" />
 
 <xacro:include filename="$(find my_robot_description)/urdf/table.xacro"/>
- 
+
+<xacro:include filename="$(find my_robot_description)/urdf/GoldbarrenGroup.xacro"/>
   <link name="test">
 
     <visual>
