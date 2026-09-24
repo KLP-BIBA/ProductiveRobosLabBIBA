@@ -34,7 +34,15 @@
 
     <origin xyz="-0.9 -0.3 0" rpy="0 0 0"/>
   </joint>
- 
+
+<joint name="input_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="GoldbarrenPart:1"/>
+
+    <origin xyz="0.4 0 0" rpy="0 0 0"/>
+  </joint>
+
+
  <joint name="base_to_table" type="fixed">
     <parent link="base_link"/>
     <child link="test"/>
