@@ -31,6 +31,17 @@ def restore_rvizweb_config():
         rospy.delete_param(RVIZWEB_CONFIG_SAVED)
 
 
+def cleanup_after_scene():
+    """Remove what a stopped scene leaves behind on the ROS master.
+
+    Gazebo scenes set /use_sim_time to true; later scenes without a simulation clock would
+    wait forever. Nodes that did not unregister in time stay listed until rosnode cleanup.
+    """
+    if rospy.has_param("/use_sim_time"):
+        rospy.delete_param("/use_sim_time")
+    subprocess.run("echo y | rosnode cleanup", shell=True, capture_output=True, timeout=60)
+
+
 def wait_for_param(name, timeout):
     t0 = time.time()
     while time.time() - t0 < timeout:
@@ -108,6 +119,7 @@ class LaunchPanel:
 
     def stop(self):
         self.launch.stop()
+        cleanup_after_scene()
         restore_rvizweb_config()
         if self.sidecar is not None:
             self.sidecar.close()

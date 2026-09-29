@@ -8,6 +8,10 @@
   <arg name="animate" default="true"/>
   <arg name="speed" default="1.0"/>
 
+  <!-- Wall-clock time. A Gazebo scene (e.g. the PR2 example) sets /use_sim_time to true and
+       leaves it set; without /clock the waypoint player would then wait forever. -->
+  <param name="/use_sim_time" value="false"/>
+
   <param name="robot_description"
          command="xacro '$(find biba_cell_description)/urdf/cell.xacro' layout:=$(arg layout)"/>
 
