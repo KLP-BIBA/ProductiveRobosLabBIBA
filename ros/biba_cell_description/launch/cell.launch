@@ -1,0 +1,22 @@
+<launch>
+  <!-- Robot cell: FANUC CR-35iA and UR20 robots placed according to config/cell_layout.yaml.
+       animate:=true  moves every robot along its waypoints from config/motions.yaml
+       animate:=false holds every robot in its first waypoint
+       speed          time factor of the motion (0.5 = half speed) -->
+  <arg name="layout" default="$(find biba_cell_description)/config/cell_layout.yaml"/>
+  <arg name="motions" default="$(find biba_cell_description)/config/motions.yaml"/>
+  <arg name="animate" default="true"/>
+  <arg name="speed" default="1.0"/>
+
+  <param name="robot_description"
+         command="xacro '$(find biba_cell_description)/urdf/cell.xacro' layout:=$(arg layout)"/>
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+
+  <node pkg="biba_cell_description" type="waypoint_player.py" name="waypoint_player" output="screen">
+    <param name="layout" value="$(arg layout)"/>
+    <param name="motions" value="$(arg motions)"/>
+    <param name="animate" value="$(arg animate)"/>
+    <param name="speed" value="$(arg speed)"/>
+  </node>
+</launch>

@@ -1,0 +1,8 @@
+<launch>
+  <!-- PR2 example from the rvizweb README (https://github.com/osrf/rvizweb#viewing-urdf),
+       on ROS Noetic instead of Kinetic. Gazebo runs without GUI because Binder has no display.
+       RVizWeb (started by binder/entrypoint.sh) shows the robot with fixed frame /base_link. -->
+  <include file="$(find pr2_gazebo)/launch/pr2_empty_world.launch">
+    <arg name="gui" value="false"/>
+  </include>
+</launch>

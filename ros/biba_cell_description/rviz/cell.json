@@ -1,0 +1,26 @@
+{
+  "globalOptions": {
+    "background": "#333333",
+    "fixedFrame": "/world"
+  },
+  "sidebarOpened": false,
+  "viewerOptions": {
+    "camera": { "position": { "x": 8.0, "y": -5.5, "z": 5.5 } },
+    "cameraControls": { "center": { "x": 1.6, "y": 1.75, "z": 0.8 } },
+    "directionalLight": { "position": { "x": 3, "y": -2, "z": 8 } }
+  },
+  "displays": [
+    {
+      "isShown": true,
+      "name": "Grid",
+      "options": { "cellSize": "1", "color": "#888888", "numCells": "14" },
+      "type": "grid"
+    },
+    {
+      "isShown": true,
+      "name": "Robot model",
+      "options": { "param": "robot_description", "tfPrefix": "" },
+      "type": "urdf"
+    }
+  ]
+}

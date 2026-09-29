@@ -1,0 +1,19 @@
+# Layout of the robot cell. Units: metres and radians, frame "world" (z up).
+#
+# robots: id        prefix of all links and joints of this robot (must be unique)
+#         type      cr35ia (FANUC CR-35iA) or ur20 (Universal Robots UR20)
+#         x, y, yaw position and orientation of the robot base
+#         pedestal  height of a box under the robot base, 0 = mounted on the floor
+# tables: id, x, y, yaw of the table centre, size: [length, width, height]
+#
+# The waypoints in motions.yaml fit this layout: each CR-35iA faces its table in +x,
+# each UR20 faces it in -x. After moving a robot relative to its table, check the motion.
+robots:
+  - {id: cr35_1, type: cr35ia, x: 0.0, y: 0.0, yaw: 0.0, pedestal: 0.0}
+  - {id: ur20_1, type: ur20, x: 3.2, y: 0.0, yaw: 3.14159, pedestal: 0.6}
+  - {id: cr35_2, type: cr35ia, x: 0.0, y: 3.5, yaw: 0.0, pedestal: 0.0}
+  - {id: ur20_2, type: ur20, x: 3.2, y: 3.5, yaw: 3.14159, pedestal: 0.6}
+
+tables:
+  - {id: table_1, x: 1.6, y: 0.0, yaw: 0.0, size: [1.2, 0.8, 0.8]}
+  - {id: table_2, x: 1.6, y: 3.5, yaw: 0.0, size: [1.2, 0.8, 0.8]}

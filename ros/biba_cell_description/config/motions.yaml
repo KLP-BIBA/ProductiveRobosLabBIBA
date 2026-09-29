@@ -1,0 +1,39 @@
+# Joint-space waypoints per robot type (radians). The list repeats in a loop.
+#   move  seconds to reach the waypoint from the previous one (the first comes from the last)
+#   hold  seconds to stay at the waypoint
+# The first waypoint is also the pose for animate:=false.
+#
+# The poses are a pick and place on the near half of the robot's table, tool pointing down.
+# They were computed with numeric inverse kinematics on the UR20 and CR-35iA models for the
+# delivered cell_layout.yaml (table centre 1.6 m in front of the robot base, table top 0.8 m,
+# UR20 on a 0.6 m pedestal). The script is kept with the plan in the planning folder
+# (log/plans/assets/2026-09-29_spike/compute_waypoints.py). Checked along every segment:
+# tool at least 0.10 m above the table top, no joint frame near the floor.
+types:
+  ur20:
+    joints: [shoulder_pan_joint, shoulder_lift_joint, elbow_joint, wrist_1_joint, wrist_2_joint, wrist_3_joint]
+    waypoints:
+      - {name: home, pose: [-0.3416, -1.9384, 2.1267, -1.7591, -1.5708, -1.9124], move: 2.0, hold: 1.0}
+      - {name: above_pick, pose: [-0.3857, -1.1813, 1.5749, -1.9644, -1.5708, -1.9565], move: 2.5, hold: 0.2}
+      - {name: pick, pose: [-0.3857, -0.9902, 1.7517, -2.3322, -1.5708, -1.9565], move: 1.2, hold: 0.6}
+      - {name: above_pick, pose: [-0.3857, -1.1814, 1.5750, -1.9644, -1.5708, -1.9565], move: 1.0, hold: 0.1}
+      - {name: above_place, pose: [0.0424, -1.1814, 1.5751, -1.9645, -1.5708, -1.5284], move: 2.0, hold: 0.2}
+      - {name: place, pose: [0.0424, -0.9902, 1.7517, -2.3322, -1.5708, -1.5284], move: 1.2, hold: 0.6}
+      - {name: above_place, pose: [0.0424, -1.1814, 1.5751, -1.9645, -1.5708, -1.5284], move: 1.0, hold: 0.1}
+  cr35ia:
+    joints: [joint_1, joint_2, joint_3, joint_4, joint_5, joint_6]
+    waypoints:
+      - {name: home, pose: [0.0000, -0.1034, -0.5855, 0.0000, -1.0887, 0.0000], move: 2.0, hold: 1.0}
+      - {name: above_pick, pose: [-0.2054, 0.5378, -0.3290, 0.0000, -0.7039, 0.2054], move: 2.5, hold: 0.2}
+      - {name: pick, pose: [-0.2054, 0.8222, -0.3156, 0.0000, -0.4330, 0.2054], move: 1.2, hold: 0.6}
+      - {name: above_pick, pose: [-0.2054, 0.5379, -0.3289, -0.0001, -0.7039, 0.2055], move: 1.0, hold: 0.1}
+      - {name: above_place, pose: [0.2054, 0.5379, -0.3289, -0.0001, -0.7040, -0.2053], move: 2.0, hold: 0.2}
+      - {name: place, pose: [0.2054, 0.8222, -0.3156, 0.0000, -0.4330, -0.2054], move: 1.2, hold: 0.6}
+      - {name: above_place, pose: [0.2054, 0.5379, -0.3289, 0.0001, -0.7039, -0.2055], move: 1.0, hold: 0.1}
+
+# Per-robot settings, by id from cell_layout.yaml: offset shifts the loop in seconds,
+# waypoints (optional) replaces the waypoints of the type for this robot.
+robots:
+  ur20_1: {offset: 2.0}
+  cr35_2: {offset: 5.0}
+  ur20_2: {offset: 8.0}

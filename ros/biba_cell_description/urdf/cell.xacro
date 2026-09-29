@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!-- Robot cell built from config/cell_layout.yaml: FANUC CR-35iA (fanuc_cr35ia_support),
+     UR20 (ur_description), optional pedestals and tables, all attached to the link "world". -->
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="biba_cell">
+  <xacro:arg name="layout" default="$(find biba_cell_description)/config/cell_layout.yaml"/>
+
+  <xacro:include filename="$(find ur_description)/urdf/inc/ur_macro.xacro"/>
+  <xacro:include filename="$(find fanuc_cr35ia_support)/urdf/cr35ia_macro.xacro"/>
+
+  <xacro:property name="layout" value="${xacro.load_yaml('$(arg layout)')}"/>
+
+  <link name="world"/>
+
+  <!-- Box standing on the origin of its link (bottom face at z = 0) -->
+  <xacro:macro name="box_link" params="name size rgba material">
+    <link name="${name}">
+      <visual>
+        <origin xyz="0 0 ${size[2] / 2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${size[0]} ${size[1]} ${size[2]}"/>
+        </geometry>
+        <material name="${material}">
+          <color rgba="${rgba}"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 ${size[2] / 2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${size[0]} ${size[1]} ${size[2]}"/>
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+
+  <!-- One robot of the layout, with pedestal if its height is above zero -->
+  <xacro:macro name="cell_robot" params="r">
+    <xacro:if value="${r['type'] == 'ur20'}">
+      <xacro:ur_robot prefix="${r['id']}_"
+        joint_limits_parameters_file="$(find ur_description)/config/ur20/joint_limits.yaml"
+        kinematics_parameters_file="$(find ur_description)/config/ur20/default_kinematics.yaml"
+        physical_parameters_file="$(find ur_description)/config/ur20/physical_parameters.yaml"
+        visual_parameters_file="$(find ur_description)/config/ur20/visual_parameters.yaml"/>
+    </xacro:if>
+    <xacro:if value="${r['type'] == 'cr35ia'}">
+      <xacro:fanuc_cr35ia prefix="${r['id']}_"/>
+    </xacro:if>
+
+    <xacro:if value="${r.get('pedestal', 0) > 0}">
+      <xacro:box_link name="${r['id']}_pedestal" size="${[0.6, 0.6, r['pedestal']]}"
+                      rgba="0.45 0.45 0.48 1" material="pedestal_grey"/>
+      <joint name="world_to_${r['id']}_pedestal" type="fixed">
+        <parent link="world"/>
+        <child link="${r['id']}_pedestal"/>
+        <origin xyz="${r['x']} ${r['y']} 0" rpy="0 0 ${r['yaw']}"/>
+      </joint>
+      <joint name="${r['id']}_pedestal_to_base" type="fixed">
+        <parent link="${r['id']}_pedestal"/>
+        <child link="${r['id']}_base_link"/>
+        <origin xyz="0 0 ${r['pedestal']}" rpy="0 0 0"/>
+      </joint>
+    </xacro:if>
+    <xacro:unless value="${r.get('pedestal', 0) > 0}">
+      <joint name="world_to_${r['id']}" type="fixed">
+        <parent link="world"/>
+        <child link="${r['id']}_base_link"/>
+        <origin xyz="${r['x']} ${r['y']} 0" rpy="0 0 ${r['yaw']}"/>
+      </joint>
+    </xacro:unless>
+  </xacro:macro>
+
+  <!-- xacro has no loops: both macros call themselves with the rest of the list -->
+  <xacro:macro name="cell_robots" params="robots">
+    <xacro:if value="${len(robots) > 0}">
+      <xacro:cell_robot r="${robots[0]}"/>
+      <xacro:cell_robots robots="${robots[1:]}"/>
+    </xacro:if>
+  </xacro:macro>
+
+  <xacro:macro name="cell_tables" params="tables">
+    <xacro:if value="${len(tables) > 0}">
+      <xacro:box_link name="${tables[0]['id']}" size="${tables[0]['size']}"
+                      rgba="0.72 0.58 0.42 1" material="table_wood"/>
+      <joint name="world_to_${tables[0]['id']}" type="fixed">
+        <parent link="world"/>
+        <child link="${tables[0]['id']}"/>
+        <origin xyz="${tables[0]['x']} ${tables[0]['y']} 0" rpy="0 0 ${tables[0]['yaw']}"/>
+      </joint>
+      <xacro:cell_tables tables="${tables[1:]}"/>
+    </xacro:if>
+  </xacro:macro>
+
+  <xacro:cell_robots robots="${layout['robots']}"/>
+  <xacro:cell_tables tables="${layout.get('tables', [])}"/>
+</robot>
