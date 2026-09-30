@@ -5,7 +5,7 @@
   },
   "sidebarOpened": false,
   "viewerOptions": {
-    "camera": { "position": { "x": 6.2, "y": -3.6, "z": 4.4 } },
+    "camera": { "position": { "x": 4.9, "y": -2.4, "z": 3.4 } },
     "cameraControls": { "center": { "x": 1.6, "y": 1.2, "z": 0.8 } },
     "directionalLight": { "position": { "x": 3, "y": -2, "z": 8 } }
   },
