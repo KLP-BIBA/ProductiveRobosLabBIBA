@@ -4,16 +4,18 @@
 #         type      cr35ia (FANUC CR-35iA) or ur20 (Universal Robots UR20)
 #         x, y, yaw position and orientation of the robot base
 #         pedestal  height of a box under the robot base, 0 = mounted on the floor
+#         gripper   rg6 (OnRobot RG6 on tool0) or omitted
 # tables: id, x, y, yaw of the table centre, size: [length, width, height]
 #
-# The waypoints in motions.yaml fit this layout: each CR-35iA faces its table in +x,
-# each UR20 faces it in -x. After moving a robot relative to its table, check the motion.
+# The four robots stand at the corners of one table and pass an apple around it.
+# The waypoints in motions.yaml were computed for exactly this layout
+# (compute_relay.py in the planning folder). After moving a robot or the table,
+# recompute them; otherwise the grippers miss the apple spots.
 robots:
-  - {id: cr35_1, type: cr35ia, x: 0.0, y: 0.0, yaw: 0.0, pedestal: 0.0}
-  - {id: ur20_1, type: ur20, x: 3.2, y: 0.0, yaw: 3.14159, pedestal: 0.6}
-  - {id: cr35_2, type: cr35ia, x: 0.0, y: 3.5, yaw: 0.0, pedestal: 0.0}
-  - {id: ur20_2, type: ur20, x: 3.2, y: 3.5, yaw: 3.14159, pedestal: 0.6}
+  - {id: cr35_1, type: cr35ia, x: 0.4, y: 0.2, yaw: 0.0, pedestal: 0.0, gripper: rg6}
+  - {id: ur20_1, type: ur20, x: 2.8, y: 0.2, yaw: 3.141593, pedestal: 0.6, gripper: rg6}
+  - {id: ur20_2, type: ur20, x: 2.8, y: 2.2, yaw: 3.141593, pedestal: 0.6, gripper: rg6}
+  - {id: cr35_2, type: cr35ia, x: 0.4, y: 2.2, yaw: 0.0, pedestal: 0.0, gripper: rg6}
 
 tables:
-  - {id: table_1, x: 1.6, y: 0.0, yaw: 0.0, size: [1.2, 0.8, 0.8]}
-  - {id: table_2, x: 1.6, y: 3.5, yaw: 0.0, size: [1.2, 0.8, 0.8]}
+  - {id: table, x: 1.6, y: 1.2, yaw: 0.0, size: [1.4, 1.0, 0.8]}

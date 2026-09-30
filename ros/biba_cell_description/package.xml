@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>biba_cell_description</name>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
   <description>
-    Robot cell for the BIBA virtual lab: FANUC CR-35iA and UR20 robots, pedestals and tables,
-    placed from config/cell_layout.yaml and moved along joint-space waypoints (config/motions.yaml).
+    Robot cell for the BIBA virtual lab: FANUC CR-35iA and UR20 robots with OnRobot RG6 grippers,
+    pedestals and a table, placed from config/cell_layout.yaml. The robots pass an apple around the
+    table along joint-space waypoints (config/motions.yaml).
   </description>
   <maintainer email="kle@biba.uni-bremen.de">Konstantin Klein</maintainer>
   <license>Apache-2.0</license>
@@ -13,9 +14,11 @@
 
   <exec_depend>fanuc_cr35ia_support</exec_depend>
   <exec_depend>fanuc_resources</exec_depend>
+  <exec_depend>onrobot_rg_description</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>ur_description</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
   <exec_depend>xacro</exec_depend>
 </package>

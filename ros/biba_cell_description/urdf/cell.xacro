@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <!-- Robot cell built from config/cell_layout.yaml: FANUC CR-35iA (fanuc_cr35ia_support),
-     UR20 (ur_description), optional pedestals and tables, all attached to the link "world". -->
+     UR20 (ur_description), optional OnRobot RG6 grippers (onrobot_rg_description),
+     optional pedestals and tables, all attached to the link "world". -->
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="biba_cell">
   <xacro:arg name="layout" default="$(find biba_cell_description)/config/cell_layout.yaml"/>
 
   <xacro:include filename="$(find ur_description)/urdf/inc/ur_macro.xacro"/>
   <xacro:include filename="$(find fanuc_cr35ia_support)/urdf/cr35ia_macro.xacro"/>
+  <xacro:include filename="$(find biba_cell_description)/urdf/rg6_gripper.xacro"/>
 
   <xacro:property name="layout" value="${xacro.load_yaml('$(arg layout)')}"/>
 
@@ -43,6 +45,9 @@
     </xacro:if>
     <xacro:if value="${r['type'] == 'cr35ia'}">
       <xacro:fanuc_cr35ia prefix="${r['id']}_"/>
+    </xacro:if>
+    <xacro:if value="${r.get('gripper', '') == 'rg6'}">
+      <xacro:biba_rg6 prefix="${r['id']}_gripper_" parent="${r['id']}_tool0"/>
     </xacro:if>
 
     <xacro:if value="${r.get('pedestal', 0) > 0}">

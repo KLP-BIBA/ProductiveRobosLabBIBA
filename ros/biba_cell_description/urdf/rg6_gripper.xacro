@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!-- OnRobot RG6 two-finger gripper on a robot flange.
+     Uses the finger macros and meshes of onrobot_rg_description (UOsaka-Harada-Laboratory/onrobot, MIT).
+     The package's own macro onrobot_rg6 also adds a link "world" and a joint "joint0", which breaks a
+     cell with several grippers; this macro therefore defines its own base link.
+     finger_joint: -0.628 fully open (151 mm between the finger pads), 0.102 holds an apple of 80 mm.
+     The other finger joints are mimic joints of finger_joint. -->
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include filename="$(find onrobot_rg_description)/urdf/onrobot_rg6_model_macro.xacro"/>
+
+  <!-- prefix: prefix of all gripper links and joints, parent: flange link (tool0),
+       grasp_z: distance of the grasp point between the finger pads from the flange -->
+  <xacro:macro name="biba_rg6" params="prefix parent grasp_z:=0.262">
+    <link name="${prefix}onrobot_rg6_base_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://onrobot_rg_description/meshes/rg6/visual/base_link.stl"/>
+        </geometry>
+        <material name="rg6_light_grey">
+          <color rgba="0.8 0.8 0.8 1"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://onrobot_rg_description/meshes/rg6/collision/base_link.stl"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${prefix}mount" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${prefix}onrobot_rg6_base_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:finger_links prefix="${prefix}" fingerprefix="left"/>
+    <xacro:finger_links prefix="${prefix}" fingerprefix="right"/>
+    <xacro:finger_joint prefix="${prefix}"/>
+    <xacro:right_outer_knuckle_joint prefix="${prefix}"/>
+
+    <!-- grasp point: the apple centre while the gripper holds it -->
+    <link name="${prefix}grasp"/>
+    <joint name="${prefix}grasp_joint" type="fixed">
+      <parent link="${prefix}onrobot_rg6_base_link"/>
+      <child link="${prefix}grasp"/>
+      <origin xyz="0 0 ${grasp_z}" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+</robot>
