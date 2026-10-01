@@ -12,7 +12,8 @@
 # (compute_relay.py in the planning folder). After moving a robot or the table,
 # recompute them; otherwise the grippers miss the apple spots.
 robots:
-  - {id: cr35_1, type: cr35ia, x: 0.4, y: 0.2, yaw: 0.0, pedestal: 0.0, gripper: rg6}
+  - {id: cr35_1, type: cr35ia, x: 0.3, y: 0.2, yaw: 0.0, pedestal: 0.0, gripper: rg6}
+  
   - {id: ur20_1, type: ur20, x: 2.8, y: 0.2, yaw: 3.141593, pedestal: 0.6, gripper: rg6}
   - {id: ur20_2, type: ur20, x: 2.8, y: 2.2, yaw: 3.141593, pedestal: 0.6, gripper: rg6}
   - {id: cr35_2, type: cr35ia, x: 0.4, y: 2.2, yaw: 0.0, pedestal: 0.0, gripper: rg6}
